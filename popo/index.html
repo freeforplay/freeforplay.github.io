@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 메타포 -->
+    <!-- 파비콘 -->
+    <!-- 오픈그래프 -->
+    <title>OOO의 포트폴리오</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var ht = $(window).height();
+        $(".gnb li button").click(function(){
+            var pos = parseInt($(this).attr("pos"));
+            var data = pos * ht;
+            $("body, html").not(":animated").animate({scrollTop : data+"px"}, 800);
+        });
+    });   
+    </script>
+    <link rel="stylesheet" href="common.css">
+    
+    <style>
+    body,html { overflow-x: hidden; }    
+    .vs_fr { width: 100vw; height: 100vh; overflow:hidden; }
+    .page_wrap { clear:both; width: 1200px; margin: 0 auto; 
+    position:relative; }
+    .photo_data { width: 300px; height: 300px; overflow:hidden; 
+    border-radius:150px; overflow:hidden; position:absolute; 
+    top: 150px; left: 150px; animation-name:intro_pic; 
+animation-duration:5s; animation-delay:0.8s; animation-fill-mode: both; animation-timing-function: ease-out; }
+    @keyframes intro_pic {
+        0% { transform: rotate(0deg) scale(0.5);}
+        40% { transform: rotate(3600deg) scale(1); }
+        80% { transform: rotate(0deg) scale(0.5); }
+        100% { transform:translateX(90px); }
+    }
+    .photo_data img { display:block; width: 100%; height:auto; }
+    .intro_con { width: 600px; float:right; }
+    .intro_con li {clear: both; }
+    .intro_con li span { display:inline-block; text-align: justify; text-justify:inter-character; padding: 10px; }
+    .intro_con li .intro_item_tit { width: 100px; font-size:20px; }
+    .intro_con li .intro_item_con { display:none; }
+
+    .skill_fr { width: 1195px; height:350px; border-left:5px solid #333; 
+    border-bottom:5px solid #333; }
+    .skill_fr li { width: 16%; float:left; height: 400px; position:relative; }
+    .skill_fr li span { display:block; position:absolute; left:0px; } 
+    .skill_fr li span.bar { bottom:48px; width: 50px; background-color: blueviolet; height:10px; left: 50px; transition-duration:1.5s; }
+    .skill_fr li span.lb { bottom:0px; width: 100%; text-align:center; }
+
+    .gal_fr { clear:both; width: 1200px; margin: 0 auto; }
+    .gal_fr li { width:300px; float:left; margin: 50px; position:relative; }
+    .gal_fr li a { display:block; width:300px; height: auto; }
+    .gal_fr li img { display:block; width: 300px; height: auto; }
+    .gal_fr li a .gal_tit_fr { position:absolute; width: 100%; top:0px; left: 0; height: 100%; opacity:0; visibility: hidden; transition-duration:0.7s; color:#fff; text-align: center; }
+    .gal_fr li a .gal_tit { line-height: 3; padding-top: 50px; }
+    .gal_fr li a .gal_com { line-height:1.6; padding-top:20px; }
+    .gal_fr li a:hover .gal_tit_fr { opacity: 1; visibility: visible; }
+
+    .social_fr { clear:both; width: 1200px; margin: 0 auto; }
+    .social_fr li { float:left; margin: 20px; }
+    .social_fr li.mobile { display:none; }
+
+    @media screen and (max-width:767px) {   /* 모바일의 실제 크기 : 767px 이하 */
+        .social_fr li:nth-child(4n) { clear:both; }
+        .social_fr li.mobile { display:block; }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hd">
+            <nav class="gnb">
+                <ul>
+                    <li><button pos="0">HOME</button></li>
+                    <li><button pos="1">인트로</button></li>
+                    <li><button pos="2">스킬</button></li>
+                    <li><button pos="3">포트폴리오 갤러리</button></li>
+                    <li><button pos="4">Contact</button></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <figure class="vs">
+                <div class="vs_fr">
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/YnhMKE-_vEw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </figure>
+            <section class="page" id="page1">
+                <div class="page_wrap">
+                    <h2 class="page_tit">인트로</h2>
+                    <div class="photo_data">
+                        <img src="pict.png" alt="">
+                    </div>
+                    <ul class="intro_con">
+                        <li class="item1"><span class="intro_item_tit">이름</span><span class="intro_item_con">최정호</span></li>
+                        <li class="item2"><span class="intro_item_tit">나이</span><span class="intro_item_con">34세</span></li>
+                        <li class="item3"><span class="intro_item_tit">희망직종</span><span class="intro_item_con">웹 개발자(BackEnd or FrontEnd)</span></li>
+                        <li class="item4"><span class="intro_item_tit">희망지역</span><span class="intro_item_con">서울, 경기</span></li>
+                        <li class="item5"><span class="intro_item_tit">확동지역</span><span class="intro_item_con">고양시 일산</span></li>
+                    </ul>
+                </div>
+                <script>
+                $(function(){
+                    $(".intro_con li").each(function(){
+                        $(this).find(".intro_item_con").delay($(this).index()*500).fadeIn(1000);
+                    });    
+                });    
+                </script>
+            </section>
+            <section class="page" id="page2">
+                <div class="page_wrap">
+                    <h2 class="page_tit">스킬</h2>
+                    <ul class="skill_fr">
+                        <li class="item1">
+                            <span class="bar" data-len="70"></span>
+                            <span class="lb">JAVA</span>
+                        </li>
+                        <li class="item2">
+                            <span class="bar" data-len="70"></span>
+                            <span class="lb">JSP</span>
+                        </li>
+                        <li class="item3">
+                            <span class="bar" data-len="70"></span>
+                            <span class="lb">MVC2</span>
+                        </li>
+                        <li class="item4">
+                            <span class="bar" data-len="50"></span>
+                            <span class="lb">SPRING</span>
+                        </li>
+                        <li class="item5">
+                            <span class="bar" data-len="60"></span>
+                            <span class="lb">HTML/CSS</span>
+                        </li>
+                        <li class="item6">
+                            <span class="bar" data-len="70"></span>
+                            <span class="lb">JAVASCRIPT/JQUERY</span>
+                        </li>
+                    </ul>   
+                    <a href="skill1.html" class="detail">자세히 보기</a>
+                </div>
+                <script>
+                $(function(){
+                    $("#page2").hover(function(){
+                        $(".skill_fr li").each(function(){
+                            var skill = parseInt($(this).find(".bar").attr("data-len"));
+                            $(this).find(".bar").height(skill*3.5);
+                        });
+                    });
+                });    
+                </script>
+            </section>
+            <section class="page" id="page3">
+                <div class="page_wrap">
+                    <h2 class="page_tit">포트폴리오 갤러리</h2>
+                    <ul class="gal_fr">
+                        <li class="item1">
+                            <a href="gal.html#page1">
+                                <img src="pro1img1.png" alt="">
+                                <div class="gal_tit_fr">
+                                    <h3 class="gal_tit">이수화학</h3>
+                                    <p class="gal_com">유형 : 브랜드형</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item2">
+                            <a href="gal.html#page2">
+                                <img src="http://placehold.it/400x300/333" alt="">
+                                <div class="gal_tit_fr">
+                                    <h3 class="gal_tit">서유리옷장</h3>
+                                    <p class="gal_com">유형 : 기업형</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item3">
+                            <a href="gal.html#page3">
+                                <img src="pro3pic.png" alt="">
+                                <div class="gal_tit_fr">
+                                    <h3 class="gal_tit">화천관광</h3>
+                                    <p class="gal_com">유형 : 관공서형</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item4">
+                            <a href="gal.html#page4">
+                                <img src="pro4pic.png" alt="">
+                                <div class="gal_tit_fr">
+                                    <h3 class="gal_tit">농림축산식품부</h3>
+                                    <p class="gal_com">유형 : 관공서형</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="gal.html" class="detail">자세히 보기</a>
+                </div>
+            </section>
+            <section class="page" id="page4">
+                <div class="page_wrap">
+                    <h2 class="page_tit">Contact</h2>
+                    <div class="notice_fr">
+                        <iframe width="1536" height="864" src="kktlove.dothome.co.kr/notice.php" title="" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    <ul class="social_fr">
+                        <li class="item1"><a href="">블로그</a></li>
+                        <li class="item2"><a href="">유튜브</a></li>
+                        <li class="item3"><a href="">깃허브</a></li>
+                        <li class="item4"><a href="">트렐로</a></li>
+                        <li class="item5"><a href="">페이스북</a></li>
+                        <li class="item6"><a href="">이메일</a></li>
+                        <li class="item7 mobile"><a href="">전화</a></li>
+                        <li class="item8 mobile"><a href="">SMS</a></li>
+                    </ul>   
+                </div>
+            </section>
+        </div>
+        <footer class="ft">
+
+        </footer>
+    </div>
+    <div id="quick">
+        <ul>
+            <li class="item0"><a href="#">메인</a></li>
+            <li class="item1"><a href="#page1">아이템1</a></li>
+            <li class="item2"><a href="#page2">아이템2</a></li>
+            <li class="item3"><a href="#page3">아이템3</a></li>
+            <li class="item4"><a href="#page4">아이템4</a></li>
+        </ul>
+    </div>
+</body>
+</html>
