@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>board</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="./css/datatables.min.css" />
+<script src="./js/datatables.min.js"></script>
+    <style> 
+        /* reset */
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; font-family: 'Noto Sans KR', sans-serif; }
+    ul { list-style: none; }
+    button, input[type=button], input[type=submit], input[type=reset] { outline:0; border:0; }
+    a { text-decoration: none; } 
+    .wrap { width: 100%; clear:both; }
+    input { border: none; outline: none;}
+    a:link {color: #333;}
+    a:visited{color: #333;}
+    a:hover{color:#666}
+
+    /* header */
+    .hd { width: 100%; height: 190px; position:relative;
+background-image: url("./source/hd_bg1.png"); background-repeat: no-repeat;
+background-position:center bottom; z-index: 9999;}
+.hd:before { content:""; display:block; width: 100%; height: 40px; 
+    background-color: #fff; position:absolute; top: 0; left: 0; z-index:-1;
+border-top: 2px solid rgb(210, 210, 210); border-bottom: 2px solid rgb(210, 210, 210);}
+.hd_wrap1 { width: 1200px; margin: 0 auto; }
+.logo_wrap {clear: both; }
+.logo { display:block;} 
+.logo img { display:block; width: 500px; height: auto; margin: 0 auto; padding-top: 18px; padding-bottom: 18px;}
+.tnb { float:right; }
+.tnb li { float:left; color:#333; font-size:14px; }
+.tnb li a { color:#333; display:block; padding:12px 18px; }
+.tnb li a:hover { color:#999; }
+.tnb li.user_name { padding:14px 20px; }
+.lnb { float:left; }
+.lnb li { float:left; color:#333; font-size:14px; }
+.lnb li a { color:#333; display:block; padding:12px 18px; }
+.lnb li a:hover { color:#666; }
+.lnb li.user_name { padding:14px 20px; }
+.hd_wrap2 { position:relative; width: 100%; border-top: 2px solid rgb(210, 210, 210); border-bottom: 2px solid rgb(210, 210, 210);  height: 40px; margin: 0 auto;}
+.gnb { clear:both; height: 40px; width: 1200px; background-color: #fff; margin: 0 auto; text-align: center;}
+.gnb li { float:left; width: 20%;}
+.gnb li a.dp1 { display:block; width: 200px; color:#333; text-align: center; line-height: 40px; }
+.gnb li .sub { display:none; position:absolute; border-bottom: 1px solid rgb(210, 210, 210); border-left: 1px solid rgb(210, 210, 210); border-right: 1px solid rgb(210, 210, 210); background-color: #fff;}
+.gnb li .sub li { clear:both;float:none;}
+.gnb li .sub li a { width: 200px; display:block; clear: both; float: left; color:#333; line-height: 40px; text-align: center;}
+.gnb li .sub li a:hover { color:#999; }
+.gnb li:hover .sub { display:block; }
+.gnb li:hover a.dp1 { color:#999; }
+    
+    /* footer */
+    .ft { clear:both; width: 100%; }
+.ft_img {width: 1200px; padding-top: 100px; height: 140px; margin: 0 auto;}
+.ft_img li {float: left; padding: 0 10px;}
+.ft_img li img {width: 280px; height: auto;}
+.ft_wrap1 {clear: both; border-top: 2px solid rgb(210, 210, 210); border-bottom: 2px solid rgb(210, 210, 210); }
+.ft_wrap2 { border-bottom: 2px solid rgb(210, 210, 210); }
+.ft_wrap3 { width: 1200px; margin:0 auto; }
+.top {width: 1200px; margin:0 auto; height: 30px; padding-top: 10px;}
+.top li{display:block; width: 120px;  float: left; text-align: center; height:20px; border-right: rgb(210, 210, 210) 1px solid; font-size: 12px;}
+.mid { width: 1200px; margin:0 auto; height:200px; margin-top: 30px; padding-left: 226.4px;}
+.mid_q {float:left; font-size: 12px; font-weight: bold; padding-left: 20px; padding-right: 20px;  height:140px; border-right: 1px solid rgb(210, 210, 210) ;}
+.mid li:last-child{font-size: 12px; font-weight: bold; padding-left: 20px; padding-right: 20px;  height:140px; border-right: 0px;}
+.icon {width: 22px; height: 22px;}
+.sec {clear:both; padding-top: 10px; margin: 0 auto;}
+.sec li {clear:both; float: none; padding-top: 5px; }
+.sec li:last-child{ height: 16px; padding-left: 0px;}
+.sec li p {font-size: 12px; font-weight: 400; }
+
+.iconz {width:320px; height:40px; clear: both;  padding: 0; margin: 0 auto;}
+.iconz li{ width:30px; float: left; clear: none; padding: 15px 10px; text-align: center;}
+.iconz li:last-child{padding: 15px 10px;}
+
+.bot {font-size: 10px; margin-top: 10px;}
+.left {width:600px; margin: 0; float: left;}
+.right {float:right; margin: 0;}
+.right li {float: left; padding-left: 10px;}
+    
+    
+    /* content */
+    .content { width: 1200px; margin: 0 auto; }
+    .page { width: 100%; height: 100vh; }
+    .page_wrap { width: 1200px; margin: 0 auto; }
+    .path {float:right; margin-top: 10px; color: #333;}
+    .path li {float: left; font-size: 12px; }
+    .login {clear: both; margin: 0 auto; }
+    .loginTab {width:1200px; margin:0 auto;}
+    .boxTitle {text-align: center; font-size: 30px; padding-top: 30px; padding-bottom: 30px;}
+   
+    .loginBox li {padding-top: 10px;}
+    .loginBox li:nth-child(3) {padding-top: 20px;}
+    .panel {width: 430px; height: 34px; border-bottom: 1px solid #333; font-size: 15px;}
+    .btn {width: 430px; height:40px; background-color: #666; color: #fff;}
+    .btn:hover {background-color: #999;}
+
+    /* clear fix */
+    .fix { clear:both; }
+    .fix:after { content:""; width: 100%; display:block; clear:both; }
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hd">
+            <div class="hd_wrap1">
+            <nav class="tnb">
+                <ul>
+                    <li><a href="board.html">공지사항</a></li>
+                    <li><a href="event.html">이벤트</a></li>
+                    <li><a href="qna.html">상품문의</a></li>
+                    <li><a href="logout.html">상품후기</a></li>
+                </ul>
+            
+            </nav>
+            <nav class="lnb">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <!--<li class="user_name">OOO님</li>-->
+                    <li><a href="agreement.html">회원가입</a></li>
+                    <li><a href="basket.html">장바구니</a></li>
+                    <li><a href="paymentlist.html">구매내역</a></li>
+                    <li><a href="mypage.html">마이페이지</a></li>
+                </ul>
+            
+            </nav>
+            </div>
+            <div class="logo_wrap">
+                <a href="index.html" class="logo"><img src="./source/logo.png" alt=""></a>
+            </div>
+            <div class="hd_wrap2">
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="" class="dp1">남성의류</a>
+                        <ul class="sub">
+                            <li><a href="prolist.html">아우터</a>
+                                
+                            </li>
+                            <li><a href="">탑</a>
+                               
+                            </li>
+                            <li><a href="">세트</a>
+                               
+                            </li>
+                            <li><a href="">바텀</a>
+                               
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dp1">아우터</a>
+                    </li>
+                    <li>
+                        <a href="" class="dp1">탑</a>
+                        <ul class="sub">
+                            <li><a href="">니트</a></li>
+                            <li><a href="">셔츠</a></li>
+                            <li><a href="">블라우스</a></li>
+                            <li><a href="">후드</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dp1">바텀</a>
+                        <ul class="sub">
+                            <li><a href="">롱/미디</a></li>
+                            <li><a href="">미니</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dp1">드레스</a>
+                        <ul class="sub">
+                            <li><a href="">팬츠</a></li>
+                            <li><a href="">스커트</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+            </header>
+        <div class="content">
+            <div class="path">
+            <ul>
+                <li><a href="index.html">홈 &nbsp;</a></li>&nbsp;
+                <li>> &nbsp;<br></li>
+                <li><strong>공지사항<br></strong></li>
+            </ul>
+            </div>
+            <div class="login">
+                <div class="loginTab">
+                <h3 class="boxTitle">공지사항</h3>
+                <table class="display" id="example">
+                    <thead>
+                       <tr> <th style="width: 100px;">글 번호</th><th style="width: 600px;">제목</th><th>작성자</th><th>게시일</th> </tr>
+                    </thead>   
+                    <tbody>         
+                       <tr>
+                          <td align="center">1</td align="center"><td><a href="boarddetail.html"> 공지사항1</a></td><td align="center">관리자</td>
+                          <td align="center">2021-01-18</td>
+                       </tr>
+                       <tr>
+                        <td align="center">1</td align="center"><td>공지사항1</td><td align="center">관리자</td>
+                        <td align="center">2021-01-18</td>
+                     </tr>
+                     <tr>
+                        <td align="center">1</td align="center"><td>공지사항1</td><td align="center">관리자</td>
+                        <td align="center">2021-01-18</td>
+                     </tr>
+                     <tr>
+                        <td align="center">1</td align="center"><td>공지사항1</td><td align="center">관리자</td>
+                        <td align="center">2021-01-18</td>
+                     </tr>
+                     <tr>
+                        <td align="center">1</td align="center"><td>공지사항1</td><td align="center">관리자</td>
+                        <td align="center">2021-01-18</td>
+                     </tr>
+                     <tr>
+                        <td align="center">1</td align="center"><td>공지사항1</td><td align="center">관리자</td>
+                        <td align="center">2021-01-18</td>
+                     </tr>
+                     <tr>
+                        <td align="center">1</td align="center"><td>공지사항1</td><td align="center">관리자</td>
+                        <td align="center">2021-01-18</td>
+                     </tr>
+                     <tr>
+                        <td align="center">1</td align="center"><td>공지사항1</td><td align="center">관리자</td>
+                        <td align="center">2021-01-18</td>
+                     </tr>
+                     <tr>
+                        <td align="center">1</td align="center"><td>공지사항1</td><td align="center">관리자</td>
+                        <td align="center">2021-01-18</td>
+                     </tr>
+                     <tr>
+                        <td align="center">1</td align="center"><td>공지사항1</td><td align="center">관리자</td>
+                        <td align="center">2021-01-18</td>
+                     </tr>
+                     <tr>
+                        <td align="center">1</td align="center"><td>공지사항1</td><td align="center">관리자</td>
+                        <td align="center">2021-01-18</td>
+                     </tr>
+                       
+                    </tbody>      
+                 </table>
+                  <script>
+                     $(function(){
+                         $("#example").DataTable();
+                     });
+                  </script>
+            
+
+                </div>
+            </div>       
+        </div>
+
+    </div>
+
+        <footer class="ft">
+            <div class="ft_img">
+                <ul>
+                    <li><img src="./source/store.jpg" alt=""></li>
+                    <li><img src="./source/free.jpg" alt=""></li>
+                    <li><img src="./source/monile.jpg" alt=""></li>
+                    <li><img src="./source/daily.jpg" alt=""></li>
+                </ul>
+            </div>
+            <div class="ft_wrap1">
+                <nav class="top">
+                    <ul>
+                        <li><a href="">회사소개</a></li>
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="">개인정보처리방침</a></li>
+                        <li><a href="">이용안내</a></li>
+                        <li><a href="">제휴문의</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="ft_wrap2">
+                <nav class="mid">
+                    <ul>
+                        <li class="mid_q"><p>CUSTOMER CENTER</p>
+                            <ul class="sec">
+                            <li><p style="font-size: 30px; font-weight: bold;"><img src="./source/call_icon.png" alt="" class="icon"> 01077777777</p></li>
+                            <li><p>평일 오전 10:00 ~ 오후6:00</p></li>
+                            <li><p>점심시간 오후 12:00 ~ 오후 1:00</p></li>
+                            <li><p>토 / 일 / 공휴일 휴무</p></li>
+                            </ul>
+                        </li>
+                        <li class="mid_q"><p>ACCOUNT INFO</p>
+                            <ul class="sec">
+                            <li><p>하나 111-111111-111111</p></li>
+                            <li><p>예금주:다를(OOO)</p></li>
+                            <li></li>
+                            </ul>
+                        </li>
+                        <li class="mid_q"><p>FAVORITE MENU</p>
+                            <ul class="sec">
+                            <li><a href="login.html">로그인</a> / <a href="agreement.html">회원가입</a></li>
+                            <li><a href="basket.html">장바구니</a></li>
+                            <!--<li><a href="">주문조회</a></li>-->
+                            <li><a href="mypage.html">마이페이지</a></li>
+                        </ul></li>
+                        <li class="mid_q">
+                            <p>RETURN / EXCHANGE</p>
+                            <ul class="sec">
+                                <li><p>고양시 덕양구 세솔로 122-12 1층 다를 우)10557</p></li>
+                                <li><p>자세한 교환·반품절차 안내는 문의란 및 공지사항을 참고해주세요</p></li>
+                                <li>
+                                    <ul class="iconz">
+                                        <li><a href=""><img src="./source/notice_icon.png" alt="" class="icon"></a></li>
+                                        <li><a href=""><img src="./source/speak_icon.png" alt="" class="icon"></a></li>
+                                        <li><a href=""><img src="./source/camera_icon.png" alt="" class="icon"></a></li>
+                                        <li><a href=""><img src="./source/cart_icon.png" alt="" class="icon"></a></li>
+                                        <li><a href=""><img src="./source/user_icon.png" alt="" class="icon"></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+        
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="ft_wrap3">
+                <div class="bot">
+                    <ul class="left">
+                        <li><p>상호 : 다를대표 : 서유리. 최병길사업자 등록번호 : 413-19-01037</p>
+                        </li>
+                        <li><p>주소 : 10557 경기도 고양시 덕양구 세솔로 122-12 (삼송동) 1층 다를대표전화 : 01075874814</p>
+                        </li>
+                        <li><p>통신판매업 신고 : 2021-고양덕양구-1707개인정보관리책임자 : 서유리 (darles.official@gmail.com)</p>
+                        </li>
+                        <li><p>COPYRIGHT © d'Arles ALL RIGHTS RESERVED.</p>
+                        </li>
+                    </ul>
+                
+                
+                    <ul class="right">
+                        <li><a href=""><img src="./source/escrow_inicis.png" alt=""></a></li>
+                        <li><a href=""><img src="./source/support_ftc.png" alt=""></a></li>
+                        <li><a href=""><img src="./source/support_privacy.png" alt=""></a></li>
+                        <li><a href=""><img src="./source/support_ssl.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        
+        
+            
+        </footer>
+        </div>  
+
+</body>
+
+</html>

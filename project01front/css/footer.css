@@ -1,0 +1,6 @@
+		.ft { widows: cover;}
+        .ft .vs_imgft1 { position: absolute;}
+        .ft .vs_imgft2 { position: absolute;}
+        .ft .vs_imgft3 { position: absolute;}
+      
+        .copyright { clear:both; display: block; padding: 20px;  text-align: center; font-size: 20px;}

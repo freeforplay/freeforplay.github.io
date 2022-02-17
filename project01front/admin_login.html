@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>관리자 로그인</title>
+<style>
+h1 { text-align:center; }
+.form_fr { width:660px; margin:20px auto; }
+.indata { display:block; width:600px; margin:20px auto; }
+.inbtn { display:inline-block; width:240px; margin-right:20px; height:40px; line-height:40px; background-color:#333; color:#fff; border:0; text-align:center; border-radius:22px; }
+</style>
+</head>
+<body>
+	<h2>관리자 로그인</h2>
+	<form action="admin_login.jsp" class="form_fr" method="post">
+		<input type="text"  id="m_id"  name="m_id" placeholder="관리자 아이디 입력" class="indata" required />
+		<input type="password"  id="m_pw" name="m_pw" placeholder="관리자 비밀번호 입력" class="indata"  required />
+		<br><br>
+		<input type="submit" value="로그인" class="inbtn">
+		<input type="reset"  value="취소" class="inbtn"/>
+	</form>
+</body>
+</html>

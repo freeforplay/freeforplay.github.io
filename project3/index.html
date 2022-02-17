@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>화천문화관광</title>
+
+    <link rel="shortcut icon" href="./source/hwafavicon.ico">
+    <!--화천관광페이지에 따로 파비콘이 없어서 임시로 삽입-->    
+    <meta name="title" content="화천 관광 홈페이지">
+    <meta name="keywords" content="화천문화관광, 화천군 관광문화, 화천 여행">
+    <meta name="description" content="화천 관광문화 홈페이지">
+
+    <meta property="og:title" content="화천 관광문화 홈페이지">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://tour.hwacheon.go.kr">
+    <meta property="og:description" content="화천 관광문화, 화천전경, 화천진미, 화천구경">
+    <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="fonts.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="./jquery.bxslider/jquery.bxslider.css">
+    <script src="./jquery.bxslider/jquery.bxslider.js"></script>
+
+    <style>
+    #item1 { background-image: url("./source/hwamain1img00.png");}
+    #item2 { background-image: url("./source/hwamain1img02.png");}
+    #item3 { background-image: url("./source/hwamain1img03.png");}
+    #item4 { background-image: url("./source/hwamain1img05.png");}
+    #item5 { background-image: url("./source/hwamain1img06.png");}
+    #item8 { background-color: rgb(252, 252, 252);}
+    #item9 { background-image: url("./source/hwamain2img05.png");}
+    #item10 { background-image: url("./source/hwamain2img06.png");}
+    #item11 { background-color: #fff; }
+
+    #vs { clear:both; position:relative; width: 100%; }
+    #vs .img_box { width: 400%; }
+    #vs .img_box li {  float:left;  } 
+    #vs .img_box li a {display:block; position:relative; }
+    #vs .img_box .vs_img { display:block; width: 100%; max-width: 100vw; min-width: 100vw;} 
+    #vs .img_box li { position:relative;  } 
+    #vs .img_box .tit_box { position:absolute; top:150px; left: 0; z-index:4;
+    padding:50px 250px; color:#fff; text-align: center; }
+    #vs .img_box .vs_tit { font-family: cursive; font-size:80px; font-weight:400; text-shadow:3px 2px 1px #333; }
+    #vs .img_box .vs_com { font-size:18px; text-shadow:-1px -1px 2px #333;}
+
+    .btn_box li button {  background-color:transparent; display:block; width: 40px; height: 280px; background-repeat: no-repeat; background-position: center center; 
+    background-size:100% 100%; position:absolute; top:160px; z-index:5; 
+    text-indent:-10000px; cursor:pointer; display:none; }
+    .btn_box li.btn1 button { left:50px; background-image: url("./source/arrow1.png");}
+    .btn_box li.btn2 button { right:50px; background-image: url("./source/arrow2.png");}
+
+    #page1 { position:relative; background:url("./source/backimg02.jpg")  no-repeat #c0e6d7; background-size:100%; background-position: bottom;}
+    .page:before { content:""; display:block; width: 440px; height: 440px; 
+    position:absolute; background-color:#a0b3ab; border-radius:50%; 
+    left:50%; margin-left: -210px; margin-top: -490px;  opacity:0.7;   }
+    .ptit_box { width: 440px; height: 440px; background-color:#05a4a6; color:#fff; 
+    text-align: center; padding-top: 330px; box-sizing: border-box; position:absolute; left: 50%; margin-left: -222px; border-radius:50%; margin-top: -492px;   }
+    .pg_tit2 {  font-family: 'TTTogether'; font-size:36px; font-weight:400; }
+
+    .col_tit { color:rgb(247, 247, 247); text-align: center; line-height:3; width: 100%; clear:both; margin-top: 40px; font-family: cursive;}
+    .col_tit:after { content:""; display:block; width: 40px; height: 2px; 
+background-color: rgb(255, 255, 255); clear:both; margin:0px auto; margin-bottom: 20px; }
+    .col_com { color:#fff; padding: 20px 60px; font-size:14px; text-align: center;}
+    #page1 .col_link, #page2 .col_link { display:block;  clear:both; float:none; width: 38px; height: 38px; 
+    margin: 10px auto; background-image: url("./source/family-arrow.png");
+    border-radius:21px; border:3px solid #fff;  text-indent:-10000px;
+background-repeat: no-repeat; background-position:center center; 
+    transform: rotate(90deg); }
+
+    .half_tit1 { font-size:26px; padding-left: 100px; padding-top:120px; color:#fff; text-shadow:1px 1px 2px #333; }
+    .half_tit2 { font-size:50px; padding-left: 100px; padding-top:40px; color:#fff; 
+        font-family: cursive;  font-weight:400; text-shadow:2px 2px 2px #333; }
+    .half_com { color:#fff; padding:40px 100px; font-size:18px; text-shadow:1px 1px 1px #000, -1px -1px 1px #000; }
+
+
+    #page2 { position:relative; 
+        background-image:url("./source/backimg01.jpg");
+        background-position:bottom;
+        background-repeat: no-repeat;
+        background-color:#c0e6d7; 
+    }
+    #page2 .ptit_box { background-color: #00436f;}
+    #item6 { width: 400%;  transition-delay:0.05s; 
+    transition-duration:0.6s; }
+    #item6 li { width: 25%; float:left; }
+    .thumb_vs_wrap { position:absolute; right:0; bottom: 0; overflow:hidden; width: 300px; height: 277px; }
+    #item7 { width: 400%; margin-left: 0; transition-delay:0.05s; 
+    transition-duration:0.6s; }
+    #item7 li { width: 25%; float:left; }
+    #item7 li label { display:block; width: 18px; height: 36px; 
+    background-repeat: no-repeat; background-position:center center; position:absolute; bottom:100px; text-indent:-10000px; cursor:pointer; }
+    #item7 li label.lb1 { left:24px; background-image: url("./source/prev.png"); }
+    #item7 li label.lb2 { right:24px; background-image: url("./source/next.png"); }
+    #item7 .tbox { width: 140px; height: 140px; clear:both;overflow:hidden;   margin:20px auto; top: 50px;  border-radius:75px; border:3px solid #fff; }
+    .thumb_vs_wrap #item7 li label { display:none; }
+    .ra { display:none; }
+    #ra1:checked ~ .thumb_vs_wrap #item7 .item1 label { display:block; }
+    #ra2:checked ~ .thumb_vs_wrap #item7 .item2 label { display:block; }
+    #ra3:checked ~ .thumb_vs_wrap #item7 .item3 label { display:block; }
+    #ra4:checked ~ .thumb_vs_wrap #item7 .item4 label { display:block; }
+    #ra1:checked ~ .thumb_vs_wrap #item7 { margin-left: 0; }
+    #ra2:checked ~ .thumb_vs_wrap #item7 { margin-left:-100%; }
+    #ra3:checked ~ .thumb_vs_wrap #item7 { margin-left:-200%; }
+    #ra4:checked ~ .thumb_vs_wrap #item7 { margin-left:-300%; }
+    #ra1:checked ~ #item6 { margin-left: 0; }
+    #ra2:checked ~ #item6 { margin-left:-100%; }
+    #ra3:checked ~ #item6 { margin-left:-200%; }
+    #ra4:checked ~ #item6 { margin-left:-300%; }
+    .col_vs_tit_box { position:absolute; top: 0; left: 0; }
+    .col_vs_tit { clear:both; width: 100%;  padding-top: 50px;  }
+    .col_vs_tit span { display:block; font-family: cursive;  font-weight:300; 
+padding-left:120px; font-size:50px;}
+    .col_vs_tit .row1 { color:#7a9eec; }
+    .col_vs_tit .row2 { color:#c4e9fa; }
+    .col_vs_com { padding-left: 120px; padding-top: 30px; }
+    #item8 .col_tit, #item9 .col_tit { line-height: 1.6; } 
+    #item9 .col_com img { border:1px solid #fff; border-radius:100px; }
+    #page2 .col_com { clear:both; float:none; width:auto; margin:0px auto; }
+    .col_tit.black_txt { color:#000; line-height: 1.6; padding-top: 12px; }
+    .col_tit.black_txt:after { background-color: #06060c; }
+    #item11 { position:relative; }
+    #item11 .link_box { position:absolute; bottom: 0; left: 0; width: 100%; }
+    #item11 .link_box li { display:block; width: 50%; float:left; }
+    #item11 .link_box li a { display:block; line-height: 66px; height: 66px; color:#222; background-color: #e1f0ee; padding-left:64px; font-size:15px; border-top:1px solid #fff; border-left:2px solid #fff; 
+    background-repeat: no-repeat; background-position:18px center; }
+    #item11 .link_box li:nth-child(2n+1) a { border-left:0px; }
+    #item11 .link_box li.item1 a { background-image: url("./source/hwamain2img_icon1.png"); }
+    #item11 .link_box li.item2 a { background-image: url("./source/hwamain2img_icon2.png"); }
+    #item11 .link_box li.item3 a { background-image: url("./source/hwamain2img_icon3.png"); }
+    #item11 .link_box li.item4 a { background-image: url("./source/hwamain2img_icon4.png"); }
+
+    #page3 { background-image:url("source/hwamain3img01.png");
+        background-position:bottom;
+        background-repeat:no-repeat, repeat;
+        background-color:#85caf1;  }
+    #page3 .ptit_box { background-color: #007bbf;}
+    .icon_lst { clear:both; width: 100%; padding-bottom: 30px; }
+    .icon_lst:after { content:""; display:block; clear:both; }
+    .icon_lst li { float:left; width: 13%; }
+    .icon_lst li a { display:block; text-align: center; color:#222; font-size:15px; }
+    .icon_lst li a .ico_box { display:block; width: 80px; height: 80px; 
+    margin:2px auto;  overflow:hidden; }
+    .icon_lst li a:hover { text-decoration:underline; }
+    .icon_lst li a:hover .ico_box { border:3px solid #fdfdfd; }
+    .icon_lst li a .ico_box img { display:block; width: 48px; height: 48px; margin: 0 auto; margin-top: 11px; }
+    #page3 .news_lst { clear:both; background-color: #fff; width: 1200px; 
+    margin: 0 auto; }
+    #page3 .news_lst:after { content:""; display:block; clear:both; }
+    #page3 .news_lst > .col6 { float:left; box-sizing:border-box; position:relative;
+    height: 420px; height:390px; overflow:hidden; }
+    .news_tit, .al_tit { font-size:24px; line-height: 3; padding-left: 24px; }
+    .news_lst .more { display:block; width: 24px; height: 24px; 
+    background-image: url("./source/ico_more.png"); background-repeat: no-repeat;
+background-position:center center; position:absolute; top:24px; right:24px; z-index:10; }
+    .noti_lst { clear:both; height: 390px; }
+    .noti_lst li { clear:both; padding: 10px 24px; }
+    .noti_lst li a { display:block; color:#666; font-size:16px; }
+    .noti_lst li a .noti_tit { float:left; font-weight:400; width: 420px; padding-right: 20px; text-overflow: ellipsis; overflow:hidden; white-space:nowrap;}
+    .noti_lst li a .noti_date { float:right; width: 110px; text-align:center; }
+    .noti_lst li:hover a .noti_tit { text-decoration: underline; }
+    .noti_lst li:hover a .noti_date { text-decoration: underline; }
+    .noti_lst li.act:before { content:""; display:block; width: 80px; height: 80px;   background-image: url("./source/notice_act.png"); background-repeat: no-repeat; 
+    background-position:center center; float:left;  }
+    .noti_lst li:nth-child(2) { padding-top: 30px; }
+    .noti_lst li.act a { float:left; width: 460px; overflow:hidden; }
+    .noti_lst li.act a .noti_tit { width:auto; clear:both; font-size:20px; color:#333; }
+    .noti_lst li.act a .noti_com { width:auto; clear:both;  border-bottom:1px solid #999; white-space: pre; width: 460px; display:-webkit-box; 
+    -webkit-line-clamp:3; -webkit-box-orient: vertical; }
+
+    .al_box { width: 199px; float:left; background-color: #dad160; height: 390px; }
+    .al_com { padding:8px 20px; }
+    .al_btn_fr { clear:both; width:168px; margin: 20px auto; margin-top: 100px; }
+    .al_btn_fr li { float:left; margin:8px; }
+    .al_btn_fr li button { display:block; width: 40px; height: 40px; 
+    background-repeat: no-repeat; background-position:center center; }
+    .al_btn_fr li button.prev { background-image: url("./source/picLeft.jpg"); }
+    .al_btn_fr li button.play { background-image: url("./source/picPlay.jpg");  }
+    .al_btn_fr li button.next { background-image: url("./source/picRight.jpg");  }
+    .photo_box { width: 399px; float:right; height:390px; overflow:hidden; }
+    .photo_fr { width: 400%; }
+    .photo_fr li { width: 25%; float:left; position:relative; }
+    .photo_tit { position:absolute; top:90px; font-size:28px; color:#fff;
+        text-shadow:1px 1px 2px #333, -1px -1px 2px #333; text-align: center; 
+    width: 395px; }
+    .photo_com { position:absolute; bottom:90px; font-size:20px; color:#fff; 
+        text-shadow:1px 1px 2px #333, -1px -1px 2px #333; text-align: center; 
+        width: 395px;  }
+    .photo_img { display:block; width: 100%; height: auto; margin-top:40px;}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header class="hd fix">
+        <div class="hd_wrap">
+            <a href="index.html" class="logo">
+                <img src="./source/hwalogo.gif"" alt="로고">
+                <h2 class="logo_tit">관광문화</h2>
+            </a>
+            <nav class="tnb">
+                <ul>
+                    <li><a href="subpage.html">서브페이지</a></li>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="announce.html">글목록</a></li>
+                    <li><a href="write.html">글쓰기</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="enjoy01.html" class="dp1">화천을즐기다</a>
+                        <ul class="sub">
+                            <li><a href="geoje2.html#page1">축제나라</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje2.html#page2">테마여행</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje2.html#page3">화천시티투어</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje2.html#page4">신감성사전</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                   
+                                </dl>                                
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="see01.html" class="dp1">화천을둘러보다</a>
+                        <ul class="sub">
+                            <li><a href="see01.html#page1">감성비경38선</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                    
+                                </dl>  
+                            </li>
+                            <li><a href="see01#page2">자연/풍경</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                   
+                                </dl>  
+                            </li>
+                            <li><a href="see01.html#page3">공원/전시</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                    
+                                </dl>  
+                            </li>
+                            <li><a href="see01.html#page4">문화유적</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                    
+                                </dl>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="stay01.html" class="dp1">화천에 머물다</a>
+                        <ul class="sub">
+                            <li><a href="stay01.html#page1">모텔</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                 
+                                </dl>  
+                            </li>
+                            <li><a href="stay01.html#page2">민박/팬션</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                    
+                                </dl>  
+                            </li>
+                            <li><a href="stay01.html#page3">야영지</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                  
+                                </dl>  
+                            </li>
+                            <li><a href="stay01.html#page4">한옥</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                   
+                                </dl>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="eat01.html" class="dp1">화천을 맛보다</a>
+                        <ul class="sub">
+                            <li><a href="eat01.html#page1">화천맛집</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                   
+                                </dl>  
+                            </li>
+                            <li><a href="eat01.html#page2">화천특산물</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>
+                                  
+                                </dl>  
+                            </li>
+                            <li><a href="geoje4.html#page3">관광농원</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>  
+                                </dl>  
+                            </li>
+              
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="community.html" class="dp1">화천과소통하다</a>
+                        <ul class="sub">
+                            <li><a href="notice.html">여행소식</a>
+                                <!-- 하위내용 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>  
+                                </dl> 
+                            </li>
+                            <li><a href="abook.html">홍보책자신청</a>
+                                <!-- 하위내용 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>  
+                                </dl> 
+                            </li>
+                            <li><a href="gallery.html">화천사진첩</a>
+                                <!-- 하위내용 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>  
+                                </dl> 
+                            </li>
+                            <li><a href="rush.html">교통정보</a>
+                                <!-- 하위내용 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>  
+                                </dl> 
+                            </li>
+                            <li><a href="map.html">관광지도</a>
+                                <!-- 하위내용 -->
+                                <dl class="detail">
+                                    <dd><a href="">하위메뉴1</a></dd>
+                                    <dd><a href="">하위메뉴2</a></dd>
+                                    <dd><a href="">하위메뉴3</a></dd>
+                                    <dd><a href="">하위메뉴4</a></dd>  
+                                </dl> 
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+    </header>
+    <div class="content fix">  
+        <figure class="vs " id="vs">         
+            <ul class="img_box bxslider" style="min-width:400vw">
+                
+                <li>
+                    <a href="">
+                        <img src="./source/hwavs1.png" alt="파로호" class="vs_img">
+                        <div class="tit_box">
+                            <h2 class="vs_tit">화천 물빛에 유람하다</h2>
+                            <p class="vs_com">
+                                파로호는 1944년 일제강점기 화천댐을 건설하면서 생긴 인공 호수이다. 광복 이후 북한에 속했던 지역이였는데, 한국전쟁 때 되찾아 이를 치하하기 위해 이승만 전 대통령이 화천을 직접 방문해 깨뜨릴 파(破)자와 오랑캐 노(盧)자를 써서 파로호(破盧湖)라고 이름 지었습니다.</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./source/hwavs2.png" alt="딴산" class="vs_img">
+                        <div class="tit_box">
+                            <h2 class="vs_tit">화천 강의 품에 안기다</h2>
+                            <p class="vs_com">딴산은 북한강과 계곡이 만나는 파로호와 평화의 댐 진입로에 위치하고 있으며, 산이긴 하지만 섬처럼 물가에 두둥실 떠 있는 자그마한 동산입니다.  풍산리에서 흘러나오는 계곡수와 화천댐에서 방류하는 물이 서로 만나는 지점에 자리하고 있는 곳으로 한나절에는 강가에서 물고기를 잡아 저녁을 해결할 수도 있습니다</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./source/hwavs3.png" alt="곡운구곡" class="vs_img">
+                        <div class="tit_box">
+                            <h2 class="vs_tit">화천 기운이 해를 조우하다</h2>
+                            <p class="vs_com">우리나라 구곡 6개소 중에서 실경이 남아있는 곳은 괴산의 화양구곡과 화천의 곡운구곡 2곳뿐입니다. 화천군 사내면 용담리에 위치하고 있으며, 일찍이 정약용은 곡운구곡의 아름다움을 중용의 미(美)라고 표현한 바 있습니다. 그만큼 곡운구곡은 지나치지도 모자라지도 않은 사계절 아름다운 자연의 모습을 그대로 품고 있습니다.
+
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./source/hwavs4.png" alt="해산" class="vs_img">
+                        <div class="tit_box">
+                            <h2 class="vs_tit">화천 구름을 거닐다</h2>
+                            <p class="vs_com">해산은 아름다운 자연의 모습을 고스란히 품고 있는 산입니다. 해가 먼저 떠올라 아침마다 아름다운 일출 풍경을 연출하는 곳이라 해산이라는 이름을 갖고 있습니다. 이름대로 해산은 상서로운 기운이 해를 품은 산이지요. 1194m 높이를 가진 아름다운 해산은 일산이라고도 하며, 울창한 원시림이 우거져 옛날에는 호랑이가 출몰하였다 하여 호랑이산이라 불리기도 합니다.</p>
+                        </div>
+                    </a>
+                </li>
+                
+            </ul> 
+            <script>
+                $(function(){
+                    $(".bxslider").bxSlider({
+                        auto:true, 
+                        speed:700,  
+                        pause:4000, 
+                        mode:'fade', //슬라이딩 효과(fade, horizontal, vertical)
+                        autoControls:true, //시작,중지 버튼 추가 및 활성화
+                        pager:true, //페이징 버튼 만들기
+                        captions:false, //img요소에 걸려 있는 title 속성을 제목으로 설정할 것인지
+                    });
+                });    
+                </script>          
+        </figure>
+       
+ 
+        <section class="page fix" id="page1" style="">
+            <div class="ptit_box">
+                <h4 class="pg_tit1">화천 감성비경</h4>
+                <h2 class="pg_tit2">화천의 여행정보</h2>
+            </div>
+            <div class="page_wrap">
+                <ul class="grid">
+                    <li class="col6">
+                        <div class="col6 col_item col277" id="item1">
+                            <h3 class="col_tit">실시간 숙박예약</h3>
+                            <p class="col_com">화천의 숙박 정보를 실시간으로 확인 할 수 있습니다</p>
+                            <a href="" class="col_link">더보기</a>
+                        </div>
+                        <div class="col6 col_item col277" id="item2">
+                            <h3 class="col_tit">감성뮤지엄</h3>
+                            <p class="col_com">화천을 관광해주신 분들의 추억 사진관입니다</p>
+                            <a href="" class="col_link">더보기</a>
+                        </div>
+                        <div class="col6 col_item col277" id="item3">
+                            <h3 class="col_tit">유적의 화천</h3>
+                            <p class="col_com">역사를 담은 문화 유적지에서 과거의 멋을 느낄 수 있습니다</p>
+                            <a href="" class="col_link">더보기</a>
+                        </div>
+                        <div class="col6 col_item col277" id="item4">
+                            <h3 class="col_tit">자전거와 여행</h3>
+                            <p class="col_com">북한강을 따라 총100리의 길은 자전거매니아의 성지입니다</p>
+                            <a href="" class="col_link">더보기</a>
+                        </div>
+                    </li>
+                    <li class="col6">
+                        <div class="half_box col_item col554" id="item5">
+                            <h4 class="half_tit1"></h4>
+                            <h2 class="half_tit2">예술가 마을</h2>
+                            <p class="half_com">청춘의 멘토를 만나는 감성마을 이야기</p>
+                            <a href="" class="col_link half_more">더보기</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="page fix" id="page2" style="background-color: #6d9ff5;">
+            <div class="ptit_box">
+                <h4 class="pg_tit1">축제의 장</h4>
+                <h2 class="pg_tit2">화천 특별 여행</h2>
+            </div>
+            <div class="page_wrap">
+                <ul class="grid">
+                    <li class="col6 col554">
+                        <div class="half_box col_item col554" style="position:relative;">
+                            <input type="radio" class="ra" name="ra" id="ra1" checked>
+                            <input type="radio" class="ra" name="ra" id="ra2">
+                            <input type="radio" class="ra" name="ra" id="ra3">
+                            <input type="radio" class="ra" name="ra" id="ra4">
+                            <ul class="pic_ban col554" id="item6">
+                                <li class="item1">
+                                    <img src="./source/hwamain2img02.png" alt="맨손낚시">
+                                </li>
+                                <li class="item2">
+                                    <img src="./source/hwamain2img01.jpg" alt="보물찾기">
+                                </li>
+                                <li class="item3">
+                                    <img src="./source/hwamain2img03.png" alt="미니쪽배">
+                                </li>
+                                <li class="item4">
+                                    <img src="./source/hwamain2img04.png" alt="스카일레일">
+                                </li>
+                            </ul>   
+                            <div class="thumb_vs_wrap">
+                                <ul class="thumb_ban col6 col277 col_item" id="item7" style="">
+                                    <li class="item1">
+                                        <h3 class="col_tit">맨손낚시</h3>
+                                        <label for="ra4" class="lb1">이전</label>
+                                        <div class="tbox"><img src="./source/hwamain2img02_1.png" alt="모노레일"></div>
+                                        <label for="ra2" class="lb2">다음</label>
+                                    </li>
+                                    <li class="item2">
+                                        <h3 class="col_tit">보물찾기</h3>
+                                        <label for="ra1" class="lb1">이전</label>
+                                        <div class="tbox"><img src="./source/hwamain2img01_1.png" alt="보물찾기"></div>
+                                        <label for="ra3" class="lb2">다음</label>
+                                    </li>
+                                    <li class="item3">
+                                        <h3 class="col_tit">미니쪽배</h3>
+                                        <label for="ra2" class="lb1">이전</label>
+                                        <div class="tbox"><img src="./source/hwamain2img03_1.png" alt="미니쪽배"></div>
+                                        <label for="ra4" class="lb2">다음</label>
+                                    </li>
+                                    <li class="item4">
+                                        <h3 class="col_tit">스카이레일</h3>
+                                        <label for="ra3" class="lb1">이전</label>
+                                        <div class="tbox"><img src="./source/hwamain2img04_1.png" alt="스카이레일"></div>
+                                        <label for="ra1" class="lb2">다음</label>
+                                    </li>
+                                </ul>
+                            </div>   
+                            <div class="col_vs_tit_box">
+                                <h2 class="col_vs_tit">
+                                    <span class="row1">화천에서</span>
+                                    <span class="row2">즐겨벼려</span>
+                                </h2>
+                                <p class="col_vs_com">세상에서 가장 즐거운 추억을 남기세요</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col6 col554">
+                        <div class="col6 col277 col_item" id="item8">
+                            <h3 class="col_tit" style="color: gray"><span class="gold">화천투어</span></h3>
+                            <p class="col_com">
+                                <img src="./source/hwamain2img_to.jpg" alt="화천투어">
+                            </p>
+                        </div>
+                        <div class="col6 col277 col_item" id="item9">
+                            <h3 class="col_tit">찬란한 선등거리</h3>
+                            <p class="col_com">
+                                <img src="./source/btn_movie_play.png" alt="선등거리">
+                            </p>
+                        </div>
+                        <div class="col6 col277 col_item" id="item10">
+                            <h3 class="col_tit">얼음 왕국</h3>
+                            <p class="col_com">세계 최대 규모의 빙등광장</p>
+                            <a href="" class="col_link">더보기</a>
+                        </div>
+                        <div class="col6 col277 col_item" id="item11">
+                            <h3 class="col_tit black_txt">안 온 사람은 모르는<br>즐거운 화천</h3>
+                            <ul class="link_box">
+                                <li class="item1 col6"><a href="">음식</a></li>
+                                <li class="item2 col6"><a href="">캠핑</a></li>
+                                <li class="item3 col6"><a href="">익스트림</a></li>
+                                <li class="item4 col6"><a href="">한옥체험</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="page fix" id="page3">
+            <div class="ptit_box">
+                <h4 class="pg_tit1">소식 및 소통</h4>
+                <h2 class="pg_tit2">화천의 소식정보</h2>
+            </div>
+            <div class="page_wrap">
+                <ul class="icon_lst">
+                    <li class="item1">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/hwamain3img_icon1.gif" alt="관광지도"></div>
+                            <span class="ico_txt">관광지도</span>
+                        </a>
+                    </li>
+                    <li class="item2">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/hwamain3img_icon2.gif" alt="교통정보"></div>
+                            <span class="ico_txt">교통정보</span>
+                        </a>
+                    </li>
+                    <li class="item3">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/hwamain3img_icon3.gif" alt="관광불편신고"></div>
+                            <span class="ico_txt">관광불편신고</span>
+                        </a>
+                    </li>
+                    <li class="item4">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/hwamain3img_icon4.gif" alt="홍보책자신청"></div>
+                            <span class="ico_txt">홍보책자신청</span>
+                        </a>
+                    </li>
+                    <li class="item5">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/hwamain3img_icon5.gif" alt="날씨정보"></div>
+                            <span class="ico_txt">날씨정보</span>
+                        </a>                            
+                    </li>
+                    <li class="item6">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/hwamain3img_icon6.gif" alt="화천사진첩"></div>
+                            <span class="ico_txt">화천사진첩</span>
+                        </a>
+                    </li>
+                    <li class="item7">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/hwamain3img_icon7.gif" alt="행복한정부"></div>
+                            <span class="ico_txt">행복한정부</span>
+                        </a>
+                    </li>
+ 
+                </ul>
+                <ul class="news_lst">
+                    <li class="col6">
+                        <h3 class="news_tit">새소식</h3>
+                        <a href="" class="more"></a>
+                        <ul class="noti_lst">
+                            <li class="act">
+                                <a href="">
+                                    <h4 class="noti_tit">
+                                        물빛누리호 운항에 따른 공지사항
+                                    </h4>
+                                    <p class="noti_com">운항 내용
+                                        화천군 간동면 파로호 선착장에서 평화의 댐까지 운항하는 물빛누리호가, 화천댐 우기(장마)대비 수위조절에 따른 수위하락(162.06m)으로
+
+                                        2019. 5. 22일부터 수위 상승시까지 파로호 선착장에서부터 평화의 댐 하류 지역인 비수구미(싸리골)까지만 운항하게 되었습니다.
+                                        
+                                        물빛누리호를 이용하시고자 하는 승객 여러분께서는 불편하시더라도 이해하여 주시면 감사하겠습니다.
+                                        
+                                        아울러 화천댐 수위가 상승하는 즉시 평화의 댐까지 운항됨을 알려드립니다.
+                                        
+                                        ※ 출발시간과 요금은 종전과 동일합니다.
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <h4 class="noti_tit">새로 등록된 소식1</h4>
+                                    <p class="noti_date">2022-01-20</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <h4 class="noti_tit">새로 등록된 소식2</h4>
+                                    <p class="noti_date">2021-12-01</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <h4 class="noti_tit">새로 등록된 소식3</h4>
+                                    <p class="noti_date">2021-11-09</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="col6">
+                        <div class="al_box">
+                            <h3 class="al_tit">여행 인증 사진</h3>
+                            <p class="al_com">분야별 우승작 작품</p>
+                            <ul class="al_btn_fr">
+                                <li><button class="prev"></button></li>
+                                <li><button class="play"></button></li>
+                                <li><button class="next"></button></li>
+                            </ul>
+                        </div>
+                        <div class="photo_box">
+                            <ul class="photo_fr">
+                                <li>
+                                    <img src="./source/map.gif" alt="사진1" class="photo_img">
+                                    <h4 class="photo_tit">화천 관광 지도</h4>
+                                    <p class="photo_com">정보 분야</p>
+                                </li>
+                          
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <footer class="ft fix">
+        <nav class="fnb">
+            <ul class="fnb_fr">
+                <li><a href="">관광사업소</a></li>
+                <li><a href="">면/동</a></li>
+                <li><a href="">국군지원</a></li>
+                <li><a href="">제휴업체</a></li>
+            </ul>
+        </nav>
+        <div class="ft_wrap">
+            <nav class="linkbar">
+                <ul>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">웹마스터메일</a></li>
+                    <li><a href="">저작권정책</a></li>
+                    <li><a href="">의견 접수</a></li>
+                    <li><a href="">자료다운로드</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p class="addr">(24125) 강원도 화천춘 화천읍 화천새싹길 45 / 대표전화 033-442-1211</p>
+                <p class="copy">Copyright© Hwacheon-gun. All Rights Reserved.</p>
+            </div>
+
+    </footer>
+</div>
+</body>
+</html>

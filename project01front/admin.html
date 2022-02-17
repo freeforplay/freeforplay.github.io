@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이수화학 관리</title>
+<link rel="stylesheet" href="./css/reset.css"> 
+<link rel="shortcut icon" href="./img/favicon.ico">
+<style>
+.header_name { font-size: 40px;}
+    .gnb { clear:both; width:100%; height: 800px; background-color: lightskyblue; margin:100px auto;  }
+    .menu{clear: both; width:180px; height: 500px;}
+    .menu>li { text-align:center; font-size: 25px; padding-left:10px;padding-top: 20px; border-bottom:3px solid #333;}
+
+	.ft { clear: both; width:100%; }
+ .ft .vs_imgft1 { position: absolute;}
+  .ft .vs_imgft2 { position: absolute;}
+  .ft .vs_imgft3 { position: absolute;}
+  
+
+</style>
+</head>
+<body>
+	<!-- 헤더 -->
+	<header>
+		<a href="index.html" class="logo">
+			<img src="./img/logo.jpg" alt="로고" />
+		</a>
+		<div class="header_name">
+		<h3>관리자님</h3>
+		
+	</div>
+	<nav class="tnb">
+			<ul>
+				<li><a href="index.html">관리자 로그아웃</a></li>
+			</ul>
+		</nav>
+		<nav class="gnb">
+			<ul class="menu">
+				<li class="item1"><a href="getMemberList.html">회원 관리</a></li>
+				<li class="item3"><a href="getBizList.html">사업목록</a></li>
+				<li class="item4"><a href="insertBiz.html">사업등록</a></li>
+				<li class="item5"><a href="getNoticeList.html">공지사항 관리</a></li>
+				<!-- <li class="item2"><a href="">제품관리</a></li> -->		
+			</ul>
+		</nav>
+	</header>
+	
+	<!-- 푸터 -->
+	<footer class="ft">
+		<div class="ft_wrap">
+			<ul>
+				<li>
+					<img src="./img/bottom_visual1.png" alt="메인푸터사진1" class="vs_imgft1">
+				</li>
+				<li>
+					<img src="./img/bottom_visual2.png" alt="메인푸터사진2" class="vs_imgft2">
+				</li>
+				<li>  
+				<img src="./img/bottom_visual3.png" alt="메인푸터사진3" class="vs_imgft3">
+				 </li>   
+				 </ul>
+		</div>
+	   
+	   
+	</footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Noto Sans KR', sans-serif; */
+/* 초기화(reset, normalize) */
+* { margin: 0; padding: 0; }
+body, html { width: 100%; font-family: 'Nanum Gothic', sans-serif; color:#000; 
+background-color:#fff; }
+ul,li { list-style: none; }
+
+a { text-decoration: none; }
+.wrap { clear:both; width: 100%; }

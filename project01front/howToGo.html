@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이수화학</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/ban.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="font/nanumgothic.css">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<script> 
+  
+    function initialize() {
+    var myLatlng = new google.maps.LatLng(38.10791984422861, 127.70778669846736);
+    var mapOptions = {
+        zoom: 17,           //지도 확대 배율
+        center: myLatlng
+    }
+
+    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: '쿠쿠다스'
+    });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <!-- 여기까지를 head태그 닫기 전에 복사해서 붙여넣기 -->
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <style>
+    .content2 { clear:both; width: 100%; margin-top: 200px;}
+    .breadcrumb { clear:both; width: 1000px; height: 80px; background-color:#fff; 
+    margin: 0 auto; }
+    .tit { float:left; font-size:24px; line-height:80px; }
+    .bread { float:right; line-height: 80px;  }    
+    .bread a, .bread span, .bread select, .bread .loc_area { display:block; line-height: 80px; float:left; 
+    margin-top:10px; margin-left:10px; font-size:14px; }
+    .bread a { color:gold; }
+    .bread span:last-child { color:#333; }
+
+    .con { clear:both; width: 100%; border-top:2px solid #f1f1f1; }
+    .sidebar { width: 200px; min-height:100vh; float:left;  }
+    .lnb { clear:both; }
+    .lnb li { line-height:50px; background-color: #333; }
+    .lnb li a { padding-left: 30px; color:#fff; font-size:14px; }
+    .lnb li a.cur { color:rgba(10, 214, 250, 0.61); font-size:16px; font-weight:bold; }
+    .con_data { float:right; width:calc(100% - 202px); border-left:2px solid #f1f1f1; }
+    .vs { clear:both; width:600px; margin: 0 auto; }
+    .vs img { display:block; width: 100%; height:auto;}
+    .map_area { width: 600px; height: 400px; clear:both; margin:20px auto; position:relative; }    
+    
+    .gnb { width:100vw ;}
+    .topimg { clear:both; width:100%; margin-top: 103px;}
+    .ft { clear: both; }
+    
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body onload="initialize()">
+    <header class="hd">
+        <div class="hd_wrap">
+        <nav class="tnb">
+        <form action="" onsubmit="return sitemap(this)">
+            <a href="index.html" class="logo">
+                    <img src="./img/logo.jpg" alt="로고타입" />
+                </a>
+                <ul class="right">
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="agreement.html">회원가입</a></li>
+                    <li><a href="admin.html">관리페이지</a></li>	
+                    <li><a href="EditPlayerFormCtrl?id=<%=uid %>">회원정보수정</a></li>
+                    <li><input type="submit" value="사이트맵" class="sitem"/></li>				
+                </ul>
+        </form>
+            </nav>
+             </div>
+             <div class="hd_wrap">
+            <nav class="gnb">
+                <ul>
+                    <li>
+                                <a href="sub1.html" class="dp1">회사소개</a>
+                                <ul class="sub">
+                                    <li><a href="sub1.html">이수화학소개</a></li>
+                                    <li><a href="sub2.html">이수그룹소개</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="showBiz.html" class="dp1">사업소개</a>
+                                <ul class="sub">
+                                    <li><a href="showBiz.html">화학제품</a></li>
+                   
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="showNotice.html" class="dp1">공지사항</a>
+                                <ul class="sub">
+                                    <li><a href="showNotice.html">공지게시판</a></li>
+                                    <li><a href="howToGo.html">오시는길</a></li>
+                                  
+                                </ul>
+                            </li>
+                </ul>
+            </nav>
+            </div>
+            <script>
+            function sitemap() {
+                window.open("sitemap.html", "sitewin", "width=800, height=550, top=300");
+            }
+            </script>
+        </header>
+	<div class="topimg">
+	<img src="./img/subVisual05.jpg" alt="" />
+	</div>
+            <div class="breadcrumb">
+                <h2 class="tit">오시는 길</h2>
+                <div class="bread">
+                    <a href="showNotice.html">공지사항</a> <span>&gt;</span> 
+                    <span>오시는 길</span>
+                     <select name="loc" id="loc">
+                        <option value="/showBiz1.html">공지게시판</option>
+                        <option value="" selected>오시는길</option>
+                    </select> 
+                     
+                <script>
+                $(function(){
+                    $("#loc").change(function(){
+                        if(this.value != ""){
+                            location.href=this.value;
+                        }
+                    });
+                });
+                </script>  
+            </div>
+            <section class="con">
+                <aside class="sidebar">
+                    <nav class="lnb">
+                        <ul>
+                            <li><a href="" class="cur">오시는 길</a></li>
+                            <li><a href="showNotice.html">공지게시판</a></li>
+                           
+                        </ul>
+                    </nav>
+                </aside>
+                <div class="con_data">
+                    
+                    <div class="map_area">
+                        <!-- API 지도 삽입 -->
+                        <div id="map_canvas" style="width:700px; height:600px">
+                    </div>
+                </div>    
+            </section>    
+        </div>
+  
+ 
+        <footer class="ft">
+            <div class="ft_wrap">
+                <ul>
+                    <li>
+                        <img src="./img/bottom_visual1.png" alt="메인푸터사진1" class="vs_imgft1">
+                    </li>
+                    <li>
+                        <img src="./img/bottom_visual2.png" alt="메인푸터사진2" class="vs_imgft2">
+                    </li>
+                    <li>  
+                    <img src="./img/bottom_visual3.png" alt="메인푸터사진3" class="vs_imgft3">
+                     </li>   
+                     </ul>
+            </div>
+            <p class="copyright">
+                TEL : 02)590-6600    06575   서울특별시 서초구 사평대로 84 (반포동) <br>
+                COPYRIGHT ISU CHEMICAL. ALL RIGHTS RESERVED.
+            </p> 
+           
+        </footer>
+</body>
+</html>

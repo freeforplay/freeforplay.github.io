@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>농림식품부</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta id="resResponsiveViewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1, user-scalable=yes">
+    <meta name="description" content="걱정 없이 농사짓고 안심하고 소비하는 나라 농림축산식품부 국문 홈페이지">
+    <meta name="keywords" content="농림축산식품부">
+    <!-- 파비콘-->
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <!-- 오픈그래프-->
+    <meta property="og:title" content="농림축산식품부 홈페이지">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://tour.nolimchooksan.go.kr">
+    <meta property="og:description" content="정부농림부,건강식품,농림식품, 식품법률">
+    <!-- 필요한 라이브러리-->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 폰트-->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family-Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <!-- 외부스타일 연결-->
+    <link rel="stylesheet" href="./css/common2.css">
+<style>
+
+    .content{width: 100%; height:auto; }
+    .content .vs { width: 100%; height: 300px;background-image: url(./img/subpagevs.jpg); background-position: center center;background-size: 100% auto; margin-top: 13px;}
+    .content_wrap{ clear: both;width: 1200px; margin: 5px auto;}
+    .sub_tit1{height: 140px; line-height: 150px;font-size: 25px; background-color: rgb(85, 120, 197); text-align: center; width: 150px;float: left;}
+    .bread_box { height: 140px; width: 1000px; float: right; padding-left: 30px; padding-top: 20px; border-bottom: 1px solid rgb(24, 51, 109);}
+    .bread_tit { font-size: 23px;}
+    .bread { padding-top: 25px; line-height: 1.6; font-size: 15px;}
+
+    .sidebar { width: 150px; float: left; background-color: antiquewhite;}
+    .sidemanu { clear: both; text-align: center;}
+    .sidemanu li { clear: both; margin: 1px 2px; line-height:50px; border-bottom: 1px solid steelblue;}
+    .sidemanu li.ssubmanu1 a { font-size: 18px; font-weight: bold;} 
+
+    .contentmain{ width:1000px; float:right; padding-left: 20px;}
+    .cm_tit { text-align: center; margin-top: 10px; font-weight: bold; }
+    /* .join_con { clear:both; width: 100%; padding-top: 50px; padding-bottom: 50px; } */
+    .joinform { clear:both; width: 100%; padding-top: 50px; padding-bottom: 50px; }
+    .join_con{width: 100%; display:table; border-top:4px solid rgb(83, 77, 77);}
+    .join_con li { padding-top: 15px;}
+    .indatala {  font-size: 22px; padding-left:40px; font-family: fantasy; }
+    .indata { width: 450px; padding: 4px; float: right; font-size: 15px; margin-right: 80px;}
+    .indata#add1 { margin-right: 25px; width: 100px;}
+    .btg { width: 600px; margin:0px auto; margin-top: 30px;}
+    .btgb1 {display: block; float: left; width: 100px; font-size: 20px; background-color: rgb(204, 204, 212); color: black; border-radius: 40% ;}
+    .btgb1:hover { background-color: rgb(200, 200, 243); cursor: pointer;}
+    .btgb2 {float:right; width: 100px; font-size: 20px; background-color: rgb(204, 204, 212); color: black; border-radius: 40% }
+    .btgb2:hover { background-color: rgb(200, 200, 243); cursor: pointer;} 
+ 
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+    <header class="head">
+        <div class="hd">
+            <div class="hd_top">
+                <ul class="hd_top01">
+                    <li class="hd_top01_left"><a href="index.html"><img src="./img/logo.jpg" alt=""></a></li>
+                    <li class="hd_top01_search"><input type="search" id="search" value="검색"> <a href=""><img src="./img/search_icon.png" alt=""></a></li>    
+                    <li class="hd_top01_right">
+                      <dl class="top_right_right">
+                          <dd><a href="announce.html"><span>게시판</span></a></dd>
+                      </dl>
+                      <dl class="top_right_right">
+                      <dd><a href="write.html"><span>글쓰기</span></a></dd>
+                        </dl>
+                        <dl class="top_right_right">
+                            <dd><a href="join.html"><span>회원가입</span></a></dd>
+                        </dl>
+                        <dl class="top_right_right">
+                            <dd><a href="login.html"><span>로그인</span></a></dd>
+                        </dl>
+                    </li>
+                </ul>
+                <nav class="hd_top02">
+                    <ul class="sub_left">
+                        <li class="">
+                            <a href="subpage.html"  class="sub_title">정보</a>
+                              <ul class="sub">
+                                  <li>
+                                      <h3 class="sub_tit">정보공개</h3>
+                                      <dl class="detail">
+                                      <dd><a href="subpage.html">정보공개안내</a></dd>
+                                      <dd><a href="subpage.html">사전정보공표</a></dd>
+                                      <dd><a href="subpage.html">정보공개청구</a></dd>
+                                      <dd><a href="subpage.html">감사결과공개</a></dd>
+                                      </dl>
+                                  </li>
+                              </ul>
+                        </li>
+                        <li class="hd_top02_lsub">
+                          <a href="" class="sub_title">규제</a>
+                            <ul class="sub">
+                                <li>
+                                    <h3 class="sub_tit" >규제정책</h3>
+                                    <dl class="detail">
+                                    <dd><a href="">규제란?</a></dd>
+                                    <dd><a href="">규제개혁과제현황</a></dd>
+                                    <dd><a href="">심사중인규제법안</a></dd>
+                                    <dd><a href="">규제개선보도자료</a></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                      </li>
+                        <li class="hd_top02_lsub">
+                          <a href="" class="sub_title">소통</a>
+                            <ul class="sub">
+                                <li>
+                                    <h3 class="sub_tit">국민소통</h3>
+                                    <dl class="detail">
+                                      <dd><a href="">신고함</a></dd>
+                                      <dd><a href="">국민참여</a></dd>
+                                      <dd><a href="">적극행정</a></dd>
+                                      <dd><a href="">전자민원</a></dd> 
+                                    </dl>
+                                </li>
+                            </ul>
+                      </li>
+                      <li class="hd_top02_lsub">
+                          <a href="" class="sub_title">소식</a>
+                            <ul class="sub">
+                                <li>
+                                    <h3 class="sub_tit">알림소식</h3>
+                                    <dl class="detail">
+                                      <dd><a href="">공지.공고</a></dd>
+                                      <dd><a href="">보도자료</a></dd>
+                                      <dd><a href="">설명</a></dd>
+                                      <dd><a href="">인사채용</a></dd> 
+                                    </dl>
+                                </li>
+                            </ul>
+                      </li>
+               
+                  </ul>
+                  <ul class="sub_right" >
+                      <li class="">
+                          <a href="" class="sub_title">농식품부 </a>
+                          <ul class="sub">
+                              <li>
+                                  <h3 class="sub_tit">농식품부소개</h3>  
+                                  <dl class="detail">                             
+                                      <dd><a href="">농림축산식품소개</a></dd>
+                                      <dd><a href="">장차관소개</a></dd>
+                                      <dd><a href="">조직 및 민원</a></dd>
+                                      <dd><a href="">찾아오시는길</a></dd>
+                                  </dl>
+                              </li>
+                          </ul>
+                      </li>
+                      <li>
+                          <a href="" class="sub_title">회원사</a>
+                          <ul class="sub">
+                              <li>
+                                  <h3 class="sub_tit">회원사</h3>
+                                  <dl>
+                                      <dd><a href="">바로가기</a></dd>
+                                  </dl>
+                              </li>
+                          </ul>
+                      </li>
+                      <li>
+                          <a href="" class="sub_title">고객센터</a>
+                          <ul class="sub">
+                              <li>
+                                  <h3 class="sub_tit">고객센터</h3>
+                                  <dl>
+                                      <dd><a href="" class="">바로가기</a></dd>
+                                  </dl>
+                              </li>
+                          </ul>
+                      </li>
+                      <li>
+                          <a href="" class="sub_title">사이트맵</a>
+                      </li>
+                     </ul>
+                    
+                  </nav>
+              </div>
+        </div>
+      
+        </header>
+     <div class="content" >
+            <div class="vs">
+
+            </div>
+        <div class="content_wrap">
+            <div class="sub_box">
+                <h2 class="sub_tit1">회원가입</h2>
+                <div class="bread_box">
+                    <h3 class="bread_tit">회원가입</h3>
+                    <p class="bread"><a href="" class="home">홈 ></a><span class="nowp">로그인</span></p>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <nav class="sidemanu">
+                    <ul>
+                        <li class="ssubmanu1"><a href="">회원가입</a></li>
+                        <li><a href="minfofind.html">가입약관</a></li>
+                        <li><a href="login.html">로그인</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        <div class="contentmain">
+            <div >
+                <h2 class="cm_tit">회원가입</h2>
+            </div>
+            <div class="joinform"> 
+            <form action="" id="join" name="join">
+            <ul class="join_con">
+                <li>
+                    <label for="id" class="indatala" >아이디  :</label>
+                    <a class="indatala" id="idckbtn" target="_black" href="" style="text-align:center; float: right; ">ID중복 확인</a>
+					<input type="hidden" value="<%=uid %>" name="idck" id="idck" />
+					<script>
+					$(function(){
+						$("#cusid").keyup(function(){
+							$("#idckbtn").attr("href", "DupCtrl?cusid="+$(this).val())
+						});
+					});
+					</script>
+                    <input type="text" class="indata" id="id"/>
+                    
+                    
+                </li>
+                <li>
+                    <label for="pass1" class="indatala">비밀번호  :</label>
+                    <input type="password" class="indata" id="pass1"/>
+                </li>
+                <li>
+                    <label for="pass2" class="indatala">비밀번호확인  :</label>
+                    <input type="password" class="indata" id="pass2"/>
+                </li>
+                <li>
+                    <label for="name" class="indatala">이름  :</label>
+                    <input type="text" class="indata" id="name"/>
+                </li>
+                <!-- <li>
+                    <label for="email" class="indatala">이메일  :</label>
+                    <input type="text" class="indata" id="email"/>
+                </li> -->
+                <li>
+                    <label for="tel" class="indatala">전화번호  :</label>
+                    <input type="text" class="indata" id="tel"/>
+                </li>
+                <li>
+                    <label for="birth" class="indatala">생년월일  :</label>
+                    <input type="text" class="indata" id="birth"/>
+                </li>
+                <li>
+                    <label for="add" class="indatala" id="zipcode" >주소 :</label>
+                    <input type="button" onclick="" value="우편번호" class="" style="float: right; border: 1px solid #333; background-color: blue; color: aliceblue; cursor: pointer; "  />
+                    <input type="text" class="indata" id="add1"/>
+                </li>
+                <li>
+                    
+                    <input type="text" class="indata" id="add2" placeholder="주소입력" style="text-align: center;"/>
+                </li><br>
+                <li>
+                    <input type="text" class="indata" id="add3" placeholder="상세 주소" style="text-align: center;"/>
+                </li>
+            </ul>
+            <ul class="btg">
+            <input type="submit" class="btgb1" value="취소" />
+            <input type="reset" class="btgb2" value="회원가입"/>
+            </ul>
+        </form>
+        </div>
+        </div>
+        </div>
+    </div>
+    <footer class="ft">
+        <div class="ft_wrap">
+            <div class="ft_box">
+                <nav class="sns_link">
+                    <ul>
+                        <li><a href=""><img src="./img/facebook.png" alt=""></a></li>
+                        <li><a href=""><img src="./img/utube.png" alt=""></a></li>
+                        <li><a href=""><img src="./img/blog.png" alt=""></a></li>
+                        <li><a href=""><img src="./img/instar.png" alt=""></a></li>
+                        <li><a href=""><img src="./img/naverTv.png" alt=""></a></li>
+                    </ul>
+                </nav>
+                <nav class="relation_link">
+                    <a href="" class="hot_link">지역 본부 홈페이지</a>
+                    <div class="rel_sel_box">
+                        <select name="rel_sel" id="rel_sel">
+                            <option value="site1">링크1</option>
+                            <option value="site2">링크2</option>
+                            <option value="site3">링크3</option>
+                            <option value="site4">링크4</option>
+                            <option value="site5">링크5</option>
+                        </select>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="ft_wrap">
+            <div class="ft_box ft_logo">
+                <nav class="ft_link">
+                    <ul>
+                        <li><a href="">개인정보</a></li>
+                        <li><a href="">찾아오시는길</a></li>
+                        <li><a href="">담당연락처</a></li>
+                        <li><a href="">저작권정책</a></li>
+                        <li><a href="">이용안내</a></li>
+                        <li><a href="">전자우편무단수집거부</a></li>
+                    </ul>
+                </nav>
+                <p class="copyright">
+                    06160 서울시 강남구 테헤란로 69길 5 (삼성동, DT센터) 대표전화 : 1670-6009<br>
+                    Copyright(c) KOREAN STANDARDS ASSOCIATION.All Rights Reserved.</p>
+                <ul class="wa_group">
+                    <li class="item1"></li>
+                    <li class="item2"></li>
+                </ul>    
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

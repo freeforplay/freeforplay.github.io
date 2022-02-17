@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="EditBizCtrl" method="post" name="pform">
+<ul class="u">
+
+<li class="1">
+사업명<input type="text" value="사업 이름" name="b_name" id="b_name" readonly/>
+</li>
+<li class="2">
+Value Chain<input type="text" value="사업 vc" name="b_vc" id="b_vc" readonly/>
+<input type="button" value="변경 이미지 업로드" class="in_btn" onclick="vcCheck()" />
+<input type="hidden" value="" name="vcck" id="vcck" />
+</li>
+
+
+<li class="3">
+특징<input type="text" value="사업 sp" name="b_sp" id="b_sp"/>
+</li>
+
+<li class="4">
+주요고객<input type="text" value="사업 고객" name="b_cs" id="b_cs" />
+</li>
+
+<li class="5">ㄴㄴ
+용도<input type="text" value="사업 용도" name="b_use" id="b_use"/>
+</li>
+
+<li class="6">
+공장위치<input type="text" value="사업 위치" name="b_ad" id="b_ad"/>
+</li>
+
+<li class="7">
+물성표<input type="text" value="<%=biz.getB_phy()%>" name="b_phy" id="b_phy" readonly/>
+<input type="button" value="변경 이미지 업로드" class="in_btn" onclick="phyCheck()" />
+<input type="hidden" value="" name="phyck" id="phyck" />
+</li>
+</ul>
+<div class="btn_wrap">	
+<button type="submit" class="in_btn" onclick="" >수정</button>
+<button type="reset" class="in_btn" onclick="">취소</button>
+</div>
+<script>
+function vcCheck() {
+	window.open("vcCheckForm.jsp", "imguploadcheck", "width=300, height=300");
+}
+function phyCheck() {
+	window.open("phyCheckForm.jsp", "imguploadcheck", "width=300, height=300");
+}
+</script>
+</form>
+</body>
+</html>

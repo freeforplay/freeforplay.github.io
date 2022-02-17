@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./css/reset.css">
+<title>상품 목록</title>
+<style>
+	.header_name { font-size: 40px;}
+    .gnb { clear:both; width:100%; height: 800px; background-color: lightskyblue; margin:100px auto;  }
+    .menu{clear: both; width:180px; height: 500px;}
+    .menu>li { text-align:center; font-size: 25px; padding-left:10px;padding-top: 20px; border-bottom:3px solid #333;}
+
+	body .gnb {position: absolute;}
+	body .wrap {  clear:both;  height: 600px; left: 250px; position: relative; width: 1500px; margin-top: 20px; margin-bottom: 100px;}
+	.tit { text-align:center; }
+	.lst {list-style: none; clear:both;  margin-top:45px; border: 1px solid #333; }
+	.lst li {float:left; width:150px; overflow: hidden; text-align: center; margin-top: 5px;}
+	.lst .item2 { width: 200px; }
+	.lst .item2 img{ width: 200px;  height: 100px;}
+	.lst .item7 img{ width: 200px; height: 100px;}
+
+	.lst.lh {left:500px; border-top:3px solid #333;  font-size: 23px;}
+	.lst:last-child { border-bottom:3px solid #333; }
+	.btn_wrap { clear: both; height: 20px; float: right;}
+	.in_btn { font-size: 17px;}
+
+	.ft { clear: both; width:100%; }
+ 	.ft .vs_imgft1 { position: absolute;}
+  	.ft .vs_imgft2 { position: absolute;}
+  	.ft .vs_imgft3 { position: absolute;}
+
+</style>
+</head>
+<body>
+	<header>
+		<a href="index.html" class="logo">
+			<img src="./img/logo.jpg" alt="로고" />
+		</a>
+		<div class="header_name">
+	<h3>관리자님</h3>
+		
+	</div>
+	<nav class="tnb">
+			<ul>
+				<li><a href="index.html">관리자 로그아웃</a></li>
+			</ul>
+		</nav>
+		<nav class="gnb">
+			<ul class="menu">
+				<li class="item1"><a href="getMemberList.html">회원 관리</a></li>
+				<li class="item3"><a href="getBizList.html">사업목록</a></li>
+				<li class="item4"><a href="insertBiz.html">사업등록</a></li>
+				<li class="item5"><a href="getNoticeList.html">공지사항 관리</a></li>
+				<!-- <li class="item2"><a href="">제품관리</a></li> -->
+			
+			</ul>
+		</nav>
+	
+	</header>
+<div class="wrap">
+<h2 class="tit">사업 목록</h2>
+<ul class="lst lh">
+	<li class="item1">사업명</li>
+	<li class="item2">Value Chain</li>
+	<li class="item3">특징</li>
+	<li class="item4">주요고객</li>
+	<li class="item5">용도</li>
+	<li class="item6">공장위치</li>
+	<li class="item7">물성표</li>
+	<li class="item8">편집</li>
+</ul>
+<form action="deleteBizCtrl" method="post" name="delForm" onsubmit="return frm_submit(this)">
+
+	<ul class="lst">
+		<li class="item1"><a href="EditBizForm.html">LAB</a></li>
+		<li class="item2"><img src="./img/valuechain_lab.jpg" alt="valueChain" height="100px"/></li>
+		<li class="item3">세척력우수</li>
+		<li class="item4">LG전자 및 해외</li>
+		<li class="item5">세제</li>
+		<li class="item6">용산구</li>
+		<li class="item7"><img src="./img/phy/b_phyimg_lab.png"></li>
+		<li class="item8"><input type="checkbox" name="ck" id="ck<%=i %>" class="ck_item" value=""/></li>
+	</ul>
+	<ul class="lst">
+		<li class="item1"><a href="EditBizFormCtrl?id=<%=biz.getB_name() %>">IPA</a></li>
+		<li class="item2"><img src="./img/vc/valuechain_ipa.jpg" alt="valueChain" height="100px"/></li>
+		<li class="item3">안정성,친환경</li>
+		<li class="item4">해외 수출</li>
+		<li class="item5">공업용</li>
+		<li class="item6">용산구</li>
+		<li class="item7"><img src="./img/phy/phyimg_ipa.png"></li>
+		<li class="item8"><input type="checkbox" name="ck" id="ck<%=i %>" class="ck_item" value=""/></li>
+	</ul>
+	
+
+
+
+<div class="btn_wrap">
+<button type="submit" class="in_btn" onclick="">삭제</button>
+<button type="reset" class="in_btn" onclick="">취소</button>
+</div>
+
+<script>
+function frm_submit(f) {
+	var sel = 'input[name="ck"]:checked';
+	var item = document.querySelectorAll(sel);
+	var cnt = item.length;
+	if(cnt==0) {
+		alert("삭제할 요소를 선택하지 않았습니다.");
+		return false;
+	} else {
+		var qt=confirm("정말로 삭제하시겠습니까?");
+		if(qt) {
+			f.submit();
+		}else{
+			return false;
+		}
+	}
+}
+</script>
+</form>
+
+</div>
+<footer class="ft">
+	<div class="ft_wrap">
+		<ul>
+			<li>
+				<img src="./img/bottom_visual1.png" alt="메인푸터사진1" class="vs_imgft1">
+			</li>
+			<li>
+				<img src="./img/bottom_visual2.png" alt="메인푸터사진2" class="vs_imgft2">
+			</li>
+			<li>  
+			<img src="./img/bottom_visual3.png" alt="메인푸터사진3" class="vs_imgft3">
+			 </li>   
+			 </ul>
+	</div>
+   
+   
+</footer>
+</body>
+</html>

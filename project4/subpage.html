@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>농림축산식품부</title>
+<!-- 메타포-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta id="resResponsiveViewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1, user-scalable=yes">
+<meta name="description" content="걱정 없이 농사짓고 안심하고 소비하는 나라 농림축산식품부 국문 홈페이지">
+<meta name="keywords" content="농림축산식품부">
+<!-- 파비콘-->
+<link rel="shortcut icon" href="./img/favicon.ico">
+<!--폰트-->
+<link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="fonts.css">
+  <!-- 필요한 라이브러리-->
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<!--외부스타일 연결-->
+<link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="grid.css">
+<style>
+    .loginlink { right: 610px;}
+    .vs { clear:both; width: 100%; height: 260px; 
+    background-image:url("./img/subvs1.jpg"); background-position:center center;  
+background-repeat: no-repeat; }
+    .contentwrap { clear:both; width: 1200px; margin: 0 auto; margin-top: 2px; }
+    .sub_tit2 { height: 144px; line-height: 144px; font-size:24px; background-color: #4088cf; text-align:center; width: 190px; float:left; color:#fff; }
+    .bread_box { height: 119px; background-color: #fff; width: 980px; float:right; padding-left: 30px; padding-top: 24px; border-bottom:1px solid #999; 
+    position:relative; }
+    .cate_tit { color:#999; font-size:24px; }
+    .bread { padding-top:24px; line-height: 1.6; font-size: 16px; }
+    .bread a, .bread span { color:#999; }
+    .bread span.cur { color:#222; font-weight:600;}
+
+
+    .leftbar { width:190px; float:left; min-height: 30vh; background-color: #c4c5e6; }
+    .lnb { clear:both; }
+    .lnb li { clear:both; margin: 5px 6px; border:1px solid #aaa; line-height: 52px;  }
+    .lnb li a { color:#222; font-size:17px; padding-left:1em; }
+    .lnb li.act a { color:#0e3257; font-size:18px; font-weight:bold; }
+    .page_box { width:980px; float:right; padding-left: 30px; }
+
+    .page { padding-top:40px; overflow:visible; height:auto; min-height:100vh; }
+    .page_wrap {width: 960px; }
+    .page_tit { padding-bottom: 36px; color:rgb(219, 194, 194); }
+    .sub_pic img { display:block; max-width:940px; height:auto;   }
+    .pic_lst { clear: both; }
+    .pic_lst li { float:left; margin-right: 15px; margin-bottom: 15px; }
+    .pic_lst li img { max-width:450px; }
+    .sub_pic_tit { clear:both; font-size:15px; line-height: 1.6; }
+    .sub_pic_com { clear:both; font-size:15px; line-height: 1.6; padding-bottom: 24px; }
+    .sub_full_tit { clear:both; color:#2e70b4; line-height: 3; font-size:30px; text-align: center; }
+    .sub_con img { display:block; max-width:940px; }
+    .sub_cate_com { clear:both; padding: 15px;  color:rgb(39, 39, 39); line-height:1.8; 
+    width: 940px; font-weight:300; }
+    .map_area { clear:both; position:relative;     overflow: hidden;
+    width: 940px; }
+
+
+    #page2, #page3 { padding-top:130px; margin-top: 40px; border-top:5px solid deepskyblue; }
+
+    .page { display:none; }
+    .page:target { display:block; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+<header class="head">
+        <div class="hd">
+            <div class="hd_top">
+                <ul class="hd_top01">
+                    <li class="hd_top01_left"><a href="index.html"><img src="./img/logo.jpg" alt=""></a></li>
+                    <li class="loginlink"><a href="login.html">로그인</a></li>
+                    <li class="hd_top01_search"><input type="search" id="search" value="검색"> <a href=""><img src="./img/search_icon.png" alt=""></a></li>
+                    
+                    <li class="hd_top01_right">
+                      <dl class="top_right_left">
+                          <dt></dt>
+                          <dd><a href="" ><img src="./img/eng.jpg" alt="영어번역"><span>english</span></a></dd>
+                      </dl>
+                      <dl class="top_right_right">
+                          <dt></dt>
+                          <dd><a href=""><img src="./img/chi.jpg" alt="중궈번역"><span>chinese</span></a></dd>
+                      </dl>
+                    </li>
+                </ul>
+                <nav class="hd_top02">
+                    <ul class="sub_left">
+                        <li class="">
+                            <a href="subpage.html"  class="sub_title">정보</a>
+                              <ul class="sub">
+                                  <li>
+                                      <h3 class="sub_tit">정보공개</h3>
+                                      <dl class="detail">
+                                          <dt></dt>
+                                      <dd><a href="subpage.html">정보공개안내</a></dd>
+                                      <dd><a href="subpage.html">사전정보공표</a></dd>
+                                      <dd><a href="subpage.html">정보공개청구</a></dd>
+                                      <dd><a href="subpage.html">감사결과공개</a></dd>
+                                      </dl>
+                                  </li>
+                              </ul>
+                        </li>
+                        <li class="hd_top02_lsub">
+                          <a href="" class="sub_title">규제</a>
+                            <ul class="sub">
+                                <li>
+                                    <h3 class="sub_tit" >규제정책</h3>
+                                    <dl class="detail">
+                                        <dt></dt>
+                                    <dd><a href="">규제란?</a></dd>
+                                    <dd><a href="">규제개혁과제현황</a></dd>
+                                    <dd><a href="">심사중인규제법안</a></dd>
+                                    <dd><a href="">규제개선보도자료</a></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                      </li>
+                        <li class="hd_top02_lsub">
+                          <a href="" class="sub_title">소통</a>
+                            <ul class="sub">
+                                <li>
+                                    <h3 class="sub_tit">국민소통</h3>
+                                    <dl class="detail">
+                                        <dt></dt>
+                                      <dd><a href="">신고함</a></dd>
+                                      <dd><a href="">국민참여</a></dd>
+                                      <dd><a href="">적극행정</a></dd>
+                                      <dd><a href="">전자민원</a></dd> 
+                                    </dl>
+                                </li>
+                            </ul>
+                      </li>
+                      <li class="hd_top02_lsub">
+                          <a href="" class="sub_title">소식</a>
+                            <ul class="sub">
+                                <li>
+                                    <h3 class="sub_tit">알림소식</h3>
+                                    <dl class="detail">
+                                        <dt></dt>
+                                      <dd><a href="">공지.공고</a></dd>
+                                      <dd><a href="">보도자료</a></dd>
+                                      <dd><a href="">설명</a></dd>
+                                      <dd><a href="">인사채용</a></dd> 
+                                    </dl>
+                                </li>
+                            </ul>
+                      </li>
+               
+                  </ul>
+                  <ul class="sub_right" >
+                      <li class="">
+                          <a href="" class="sub_title">농식품부 </a>
+                          <ul class="sub">
+                              <li>
+                                  <h3 class="sub_tit">농식품부소개</h3>  
+                                  <dl class="detail"> 
+                                      <dt></dt>                            
+                                      <dd><a href="">농림축산식품소개</a></dd>
+                                      <dd><a href="">장차관소개</a></dd>
+                                      <dd><a href="">조직 및 민원</a></dd>
+                                      <dd><a href="">찾아오시는길</a></dd>
+                                  </dl>
+                              </li>
+                          </ul>
+                      </li>
+                      <li>
+                          <a href="" class="sub_title">회원사</a>
+                          <ul class="sub">
+                              <li>
+                                  <h3 class="sub_tit">회원사</h3>
+                                  <dl>
+                                      <dt></dt>
+                                      <dd><a href="">바로가기</a></dd>
+                                  </dl>
+                              </li>
+                          </ul>
+                      </li>
+                      <li>
+                          <a href="" class="sub_title">고객센터</a>
+                          <ul class="sub">
+                              <li>
+                                  <h3 class="sub_tit">고객센터</h3>
+                                  <dl>
+                                      <dt></dt>
+                                      <dd><a href="" class="">바로가기</a></dd>
+                                  </dl>
+                              </li>
+                          </ul>
+                      </li>
+                      <li>
+                          <a href="" class="sub_title">사이트맵</a>
+                      </li>
+                     </ul>
+                    
+                  </nav>
+              </div>
+        </div> 
+</header>
+<div class="content fix">
+            <figure class="vs" id="vs"> 
+            </figure>
+            <div class="contentwrap">
+                <div class="sub_box">
+                    <h2 class="sub_tit2">정보공개</h2>
+                    <div class="bread_box">
+                        <h3 class="cate_tit">정보공개</h3>
+                        <p class="bread"><a href="" class="home">홈</a>&gt; <span class="cur">정보공개</span></p>1
+     
+                    </div>
+                </div>
+                <aside class="leftbar">
+                    <nav class="lnb">
+                        <ul>
+                            <li class="act"><a href="#page1">정보공개안내</a></li>
+                            <li><a href="#page2">사전정보공표</a></li>
+                            <li><a href="#page3">정보공개청구</a></li>
+                            <li><a href="#page4">데이터댐</a></li>
+    
+                        </ul>
+                    </nav>
+                </aside>
+                <div class="page_box">
+                    <section class="page" id="page1">
+                        <h2 class="page_tit">정보공개안내</h2>
+                            <nav class="sub_con">
+                                <img src="./img/sub_con00.png" alt="">
+                            </nav>
+                    </section>
+                    <section class="page" id="page2">
+                        <h2 class="page_tit">사전정보공표</h2>  
+                            <nav class="sub_con">
+                                <img src="./img/sub_con01.png" alt="">
+                            </nav>
+                            <nav class="sub_con">
+                                <img src="./img/sub_con01_1.png" alt="" style="padding-left: 15px;">
+                            </nav>
+                    </section>
+                    <section class="page" id="page3">
+                        <h2 class="page_tit">정보공개청구</h2>
+                        <p style="font-weight: bold; font-size: 20px; margin-bottom: 5px;">사이트 바로가기</p>
+                            <nav class="sub_con">
+                                <ul>
+                                    <li><a href=""><img src="./img/sub_con03.png" alt=""></a></li>
+                                </ul>
+                                
+                            </nav>
+                    </section>
+                    <section class="page" id="page4">
+                        <h2 class="page_tit">농식품데이터댐</h2>
+                            <nav class="sub_con">
+                                <img src="./img/sub_con04.png" alt="">
+                            </nav>
+                    </section>
+                </div>
+            </div>    
+</div>
+<footer class="ft">
+            <div class="ft_wrap">
+                <div class="ft_box">
+                    <nav class="sns_link">
+                        <ul>
+                            <li><a href=""><img src="./img/facebook.png" alt=""></a></li>
+                            <li><a href=""><img src="./img/utube.png" alt=""></a></li>
+                            <li><a href=""><img src="./img/blog.png" alt=""></a></li>
+                            <li><a href=""><img src="./img/instar.png" alt=""></a></li>
+                            <li><a href=""><img src="./img/naverTv.png" alt=""></a></li>
+                        </ul>
+                    </nav>
+                    <nav class="relation_link">
+                        <a href="" class="hot_link">지역 본부 홈페이지</a>
+                        <div class="rel_sel_box">
+                            <select name="rel_sel" id="rel_sel">
+                                <option value="site1">링크1</option>
+                                <option value="site2">링크2</option>
+                                <option value="site3">링크3</option>
+                                <option value="site4">링크4</option>
+                                <option value="site5">링크5</option>
+                            </select>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="ft_wrap">
+                <div class="ft_box ft_logo">
+                    <nav class="ft_link">
+                        <ul>
+                            <li><a href="">개인정보</a></li>
+                            <li><a href="">찾아오시는길</a></li>
+                            <li><a href="">담당연락처</a></li>
+                            <li><a href="">저작권정책</a></li>
+                            <li><a href="">이용안내</a></li>
+                            <li><a href="">전자우편무단수집거부</a></li>
+                        </ul>
+                    </nav>
+                    <p class="copyright">
+                        06160 서울시 강남구 테헤란로 69길 5 (삼성동, DT센터) 대표전화 : 1670-6009<br>
+                        Copyright(c) KOREAN STANDARDS ASSOCIATION.All Rights Reserved.</p>
+                    <ul class="wa_group">
+                        <li class="item1"></li>
+                        <li class="item2"></li>
+                    </ul>    
+                </div>
+            </div>
+</footer>
+</div>
+</body>
+</html>

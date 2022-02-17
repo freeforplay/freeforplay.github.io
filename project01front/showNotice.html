@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이수화학</title>
+<link rel="stylesheet" href="./css/reset.css">
+   <link rel="stylesheet" href="./css/common.css">
+   <link rel="stylesheet" href="./css/footer.css">
+   <link rel="shortcut icon" href="./img/favicon.ico">
+<style>
+	.content { clear: both; width: 100%; height: 1000px; margin-top: 103px; }
+	.table { clear: both; width: 60%; height: 800px auto; margin-left: auto; margin-right: auto; margin-top: 50px; border: 2px solid #444444; }
+	h2 { text-align: center; padding-top: 20px; padding-bottom: 20px; background: rgb(46, 128, 223);}
+	.tbl1 { height: 40px;}
+	th,td { border: 1px solid #444444; line-height: 40px; text-align: center;}
+	.item1 { width: 70px;}
+	.item2 { width: 600px; }
+	.item3 { width: 130px;}
+	.item4 { width: 130px; }
+</style>
+</head>
+<body>
+	<header class="hd">
+		<div class="hd_wrap">
+		<nav class="tnb">
+		<form action="" onsubmit="return sitemap(this)">
+			<a href="index.html" class="logo">
+					<img src="./img/logo.jpg" alt="로고타입" />
+				</a>
+				<ul class="right">
+					<li><a href="login.html">로그인</a></li>
+					<li><a href="agreement.html">회원가입</a></li>
+					<li><a href="admin.html">관리페이지</a></li>	
+					<li><a href="EditPlayerFormCtrl?id=<%=uid %>">회원정보수정</a></li>
+					<li><input type="submit" value="사이트맵" class="sitem"/></li>				
+				</ul>
+		</form>
+			</nav>
+			 </div>
+			 <div class="hd_wrap">
+			<nav class="gnb">
+				<ul>
+					<li>
+								<a href="sub1.html" class="dp1">회사소개</a>
+								<ul class="sub">
+									<li><a href="sub1.html">이수화학소개</a></li>
+									<li><a href="sub2.html">이수그룹소개</a></li>
+									
+								</ul>
+							</li>
+							<li>
+								<a href="showBiz.html" class="dp1">사업소개</a>
+								<ul class="sub">
+									<li><a href="showBiz.html">화학제품</a></li>
+				   
+								</ul>
+							</li>
+							<li>
+								<a href="showNotice.html" class="dp1">공지사항</a>
+								<ul class="sub">
+									<li><a href="showNotice.html">공지게시판</a></li>
+									<li><a href="howToGo.html">오시는길</a></li>
+								  
+								</ul>
+							</li>
+				</ul>
+			</nav>
+			</div>
+			<script>
+			function sitemap() {
+				window.open("sitemap.html", "sitewin", "width=800, height=550, top=300");
+			}
+			</script>
+		</header>
+
+<div class="content">
+    <section class="subimg">
+        <img src="./img/subVisual05.jpg" alt="">
+    </section>  
+<table class="table">
+<h2>공지사항</h2>
+    <tr class="tbl1">
+        <th class="item1">번호</th>
+        <th class="item2">제목</th>
+        <th class="item3">작성자</th>
+        <th class="item4">작성일</th>
+    </tr>
+
+
+	
+	
+	<tr>
+		<td class="item1">4885</td>
+		<td class="item2"><a href="showDetailNotice.html">공자사항01입니다</a></td>
+		<td class="item3">관리자</td>
+		<td class="item4">20211111</td>
+	</tr>
+	<tr>
+		<td class="item1">4886</td>
+		<td class="item2"><a href="showDetailNotice.html">공자사항02입니다</a></td>
+		<td class="item3">관리자</td>
+		<td class="item4">20211111</td>
+	</tr>
+	<tr>
+		<td class="item1">4887</td>
+		<td class="item2"><a href="showDetailNotice.html">공자사항03입니다</a></td>
+		<td class="item3">관리자</td>
+		<td class="item4">20211111</td>
+	</tr>
+	<tr>
+		<td class="item1">4888</td>
+		<td class="item2"><a href="showDetailNotice.html">공자사항04입니다</a></td>
+		<td class="item3">관리자</td>
+		<td class="item4">20211111</td>
+	</tr>
+
+
+	
+
+	</table>
+</div>
+<footer class="ft">
+	<div class="ft_wrap">
+		<ul>
+			<li>
+				<img src="./img/bottom_visual1.png" alt="메인푸터사진1" class="vs_imgft1">
+			</li>
+			<li>
+				<img src="./img/bottom_visual2.png" alt="메인푸터사진2" class="vs_imgft2">
+			</li>
+			<li>  
+			<img src="./img/bottom_visual3.png" alt="메인푸터사진3" class="vs_imgft3">
+			 </li>   
+			 </ul>
+	</div>
+	<p class="copyright">
+		TEL : 02)590-6600    06575   서울특별시 서초구 사평대로 84 (반포동) <br>
+		COPYRIGHT ISU CHEMICAL. ALL RIGHTS RESERVED.
+	</p> 
+   
+</footer>
+</body>
+</html>

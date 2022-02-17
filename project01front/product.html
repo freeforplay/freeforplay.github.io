@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>관리자페이지</title>
+<style>
+.content { position: relative;}
+</style>
+</head>
+<body>
+<!-- 헤더 -->
+
+<div class="content">
+    <header>
+		<a href="index.html" class="logo">
+			<img src="./img/logo.jpg" alt="로고" />
+		</a>
+		<div class="header_name">
+		<h3>관리자님</h3>
+		
+	</div>
+	<nav class="tnb">
+			<ul>
+				<li><a href="index.html">관리자 로그아웃</a></li>
+			</ul>
+		</nav>
+		<nav class="gnb">
+			<ul class="menu">
+				<li class="item1"><a href="getMemberList.html">회원 관리</a></li>
+				<li class="item3"><a href="getBizList.html">사업목록</a></li>
+				<li class="item4"><a href="insertBiz.html">사업등록</a></li>
+				<li class="item5"><a href="getNoticeList.html">공지사항 관리</a></li>
+				<!-- <li class="item2"><a href="">제품관리</a></li> -->		
+			</ul>
+		</nav>
+	</header>
+ <ul>
+ <li>제품 번호</li>
+ <li>제품 이름</li>
+ <li>제품 가격</li>
+ <li>제품 수량</li>
+ <li>제품 이미지</li>
+ </ul>
+
+<!-- 푸터 -->
+</div>
+<%@ include file="admin_footer.jsp" %>
+</body>
+</html>

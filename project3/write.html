@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화천문화관광</title>
+    <!-- 파비콘 설정 -->
+    <link rel="shortcut icon" href="./source/hwafavicon.ico">
+    <!-- 메타포 설정 -->
+    <meta name="title" content="화천 관광 홈페이지">
+    <meta name="keywords" content="화천문화관광, 화천군 관광문화, 화천 여행">
+    <meta name="description" content="화천 관광문화 홈페이지">
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:title" content="화천 관광문화 홈페이지">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://tour.hwacheon.go.kr">
+    <meta property="og:description" content="화천 관광문화, 화천전경, 화천진미, 화천구경">
+  
+    <!-- 폰트 로딩 -->
+    <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="fonts.css">
+    <!-- 필수 API 로딩 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 외부 스타일 연결 -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="grid.css">
+
+    <style>
+    .content_wrap{ width: 900px; height: 820px; margin: 5px auto;}
+    .tit { display: block; padding: 30px;text-align: center;}
+    .table { display: table; margin: 0px auto;}
+    .table tr {display: block ;margin-bottom: 10px;}
+    .item1 { display: block; width: 70px; height: 40px; font-size: 20px;}        
+    #title { width: 643px; height: 40px; font-size: 16px;}
+    #incontent {width: 643px; font-size: 16px;}
+    #writer { width: 643px;height: 40px; font-size: 16px;}
+
+    .btn-group{  width: 600px;  margin: 2px auto; margin-top: 20px;}
+    .btn-group input { width: 200px; height: 30px; font-size: 16px; font-weight:bold; }
+    .btn-group input:hover { background-color: rgb(74, 71, 78); color: #fff;}
+    .butt1 { float: left;}
+    .butt2 { float: right;}
+    </style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hd fix">
+            <div class="hd_wrap">
+                <a href="index.html" class="logo">
+                    <img src="./source/hwalogo.gif"" alt="로고">
+                    <h2 class="logo_tit">관광문화</h2>
+                </a>
+                <nav class="tnb">
+                    <ul>
+                        <li><a href="subpage.html">서브페이지</a></li>
+                        <li><a href="join.html">회원가입</a></li>
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="announce.html">글목록</a></li>
+                        <li><a href="write.html">글쓰기</a></li>
+                    </ul>
+                </nav>
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="enjoy01.html" class="dp1">화천을즐기다</a>
+                            <ul class="sub">
+                                <li><a href="geoje2.html#page1">축제나라</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                    </dl>
+                                </li>
+                                <li><a href="geoje2.html#page2">테마여행</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                    </dl>
+                                </li>
+                                <li><a href="geoje2.html#page3">화천시티투어</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                    </dl>
+                                </li>
+                                <li><a href="geoje2.html#page4">신감성사전</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                       
+                                    </dl>                                
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="see01.html" class="dp1">화천을둘러보다</a>
+                            <ul class="sub">
+                                <li><a href="see01.html#page1">감성비경38선</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                        
+                                    </dl>  
+                                </li>
+                                <li><a href="see01#page2">자연/풍경</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                       
+                                    </dl>  
+                                </li>
+                                <li><a href="see01.html#page3">공원/전시</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                        
+                                    </dl>  
+                                </li>
+                                <li><a href="see01.html#page4">문화유적</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                        
+                                    </dl>  
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="stay01.html" class="dp1">화천에 머물다</a>
+                            <ul class="sub">
+                                <li><a href="stay01.html#page1">모텔</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                     
+                                    </dl>  
+                                </li>
+                                <li><a href="stay01.html#page2">민박/팬션</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                        
+                                    </dl>  
+                                </li>
+                                <li><a href="stay01.html#page3">야영지</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                      
+                                    </dl>  
+                                </li>
+                                <li><a href="stay01.html#page4">한옥</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                       
+                                    </dl>  
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="eat01.html" class="dp1">화천을 맛보다</a>
+                            <ul class="sub">
+                                <li><a href="eat01.html#page1">화천맛집</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                       
+                                    </dl>  
+                                </li>
+                                <li><a href="eat01.html#page2">화천특산물</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>
+                                      
+                                    </dl>  
+                                </li>
+                                <li><a href="geoje4.html#page3">관광농원</a>
+                                    <!-- 하위메뉴 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>  
+                                    </dl>  
+                                </li>
+                  
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="community.html" class="dp1">화천과소통하다</a>
+                            <ul class="sub">
+                                <li><a href="notice.html">여행소식</a>
+                                    <!-- 하위내용 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>  
+                                    </dl> 
+                                </li>
+                                <li><a href="abook.html">홍보책자신청</a>
+                                    <!-- 하위내용 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>  
+                                    </dl> 
+                                </li>
+                                <li><a href="gallery.html">화천사진첩</a>
+                                    <!-- 하위내용 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>  
+                                    </dl> 
+                                </li>
+                                <li><a href="rush.html">교통정보</a>
+                                    <!-- 하위내용 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>  
+                                    </dl> 
+                                </li>
+                                <li><a href="map.html">관광지도</a>
+                                    <!-- 하위내용 -->
+                                    <dl class="detail">
+                                        <dd><a href="">하위메뉴1</a></dd>
+                                        <dd><a href="">하위메뉴2</a></dd>
+                                        <dd><a href="">하위메뉴3</a></dd>
+                                        <dd><a href="">하위메뉴4</a></dd>  
+                                    </dl> 
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+</header>
+    <div class="content_wrap">
+        <h2 class="tit">게시글 등록</h2>
+        <form action="" method="post" name="frm">
+			<table class="table">
+				<tr>	
+					<th class="item1">제목</th>
+					<td class="item2">
+						<input type="text" name="title" id="title" value="" />
+					</td>
+				</tr>	
+				<tr>
+					<th class="item1">내용</th>
+					<td class="item2">
+						<textarea name="incontent" id="incontent"  cols="70" rows="20" style="resize: none;"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<th class="item1">작성자</th>
+					<td class="item2">
+						<input type="text" id="writer"; value="관리자" readonly>
+					</td>
+				</tr>
+			</table>
+            
+			<!--  버튼 그룹 -->
+			<div class="btn-group">
+				<input type="submit" class="butt2" value="글 등록" />
+                <input type="reset" class="butt1" value=" 취소"/>
+			</div>
+		</form>  
+    </div> 
+    <footer class="ft fix">
+        <nav class="fnb">
+            <ul class="fnb_fr">
+                <li><a href="">관광사업소</a></li>
+                <li><a href="">면/동</a></li>
+                <li><a href="">국군지원</a></li>
+                <li><a href="">제휴업체</a></li>
+            </ul>
+        </nav>
+        <div class="ft_wrap">
+            <nav class="linkbar">
+                <ul>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">웹마스터메일</a></li>
+                    <li><a href="">저작권정책</a></li>
+                    <li><a href="">의견 접수</a></li>
+                    <li><a href="">자료다운로드</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p class="addr">(24125) 강원도 화천춘 화천읍 화천새싹길 45 / 대표전화 033-442-1211</p>
+                <p class="copy">Copyright© Hwacheon-gun. All Rights Reserved.</p>
+            </div>
+
+    </footer>
+</div>
+</div>
+</body>
+</html>

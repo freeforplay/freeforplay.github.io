@@ -1,0 +1,132 @@
+    <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>공지사항 목록</title>
+<link rel="stylesheet" href="./css/reset.css">
+<style>
+body .gnb {position: absolute;}
+body .wrap {  clear:both;  height: 500px; left: 250px; top:50px; position: relative; width: 1500px; margin-top: 20px;}
+.tit { text-align:center; }
+table { display:table; border-collapse:collapse;  text-align: center;}
+tr { display:table-row; }
+th, td { display:table-cell; text-align: center;}
+.tb { width:1500px;  }
+.tb th, .tb td { line-height:36px; border-bottom:1px solid #333; }
+.tb th { border-top:2px solid #333; background:white; }
+.tb tbody tr:nth-child(2n) td { background:#fff6de; }
+.in_btn { width: 50px; cursor: pointer;}
+.in_btn2 { display: inline-block; width: 50px;   border-style: outset; border-color:rgb(118, 118, 118); background-color:rgb(239, 239, 239);
+    box-sizing: border-box;}
+
+	.header_name { font-size: 40px;}
+    .gnb { clear:both; width:100%; height: 800px; background-color: lightskyblue; margin:100px auto;  }
+    .menu{clear: both; width:180px; height: 500px;}
+    .menu>li { text-align:center; font-size: 25px; padding-left:10px;padding-top: 20px; border-bottom:3px solid #333;}
+
+	.ft { clear: both; width:100%; }
+ .ft .vs_imgft1 { position: absolute;}
+  .ft .vs_imgft2 { position: absolute;}
+  .ft .vs_imgft3 { position: absolute;}
+</style>
+</head>
+<body>
+	<header>
+		<a href="index.html" class="logo">
+			<img src="./img/logo.jpg" alt="로고" />
+		</a>
+		<div class="header_name">
+	<h3>관리자님</h3>
+		
+	</div>
+	<nav class="tnb">
+			<ul>
+				<li><a href="logout.jsp">관리자 로그아웃</a></li>
+			</ul>
+		</nav>
+		<nav class="gnb">
+			<ul class="menu">
+				<li class="item1"><a href="getMemberList.html">회원 관리</a></li>
+					<li class="item3"><a href="getBizList.html">사업목록</a></li>
+					<li class="item4"><a href="insertBiz.html">사업등록</a></li>
+					<li class="item5"><a href="getNoticeList.html">공지사항 관리</a></li>
+				<!-- <li class="item2"><a href="">제품관리</a></li> -->
+			
+			</ul>
+		</nav>
+	
+	</header>
+<div class="wrap">
+<form action="deleteNoticeCtrl" name="delform" method="post" onsubmit="return frm_submit(this)" >
+	<h2 class="tit">공지사항</h2>
+	<table class="tb">
+		<thead>
+			<tr>
+				<th class="item1">번호</th>
+				<th class="item2">제목</th>
+				<th class="item3">작성자</th>
+				<th class="item4">작성일시</th>
+				<th class="item5">편집</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			
+			<tr>
+				<td class="item1">4885</td>
+				<td class="item2"><a href="EditNoticeFormCtrl?id=<%=noti.getN_id() %>">공지사항글01입니다</a></td>
+				<td class="item3">관리자</td>
+				<td class="item4">20211111</td>
+				<td class="item5"><input type="checkbox" name="ck" id="ck>" class="ck_item" value=""/></td>
+			</tr>
+  
+   			
+		</tbody>
+	</table>
+	<div class="btn_wrap">
+	<button type="submit" class="in_btn" onclick="">삭제</button>
+	<button type="reset" class="in_btn" onclick="">취소</button>
+	<a href="addNoticeForm.html" class="in_btn2" >추가</a>
+	</div>
+	
+	<script>
+function frm_submit(f) {	
+	var sel = 'input[name="ck"]:checked'; 
+	var item = document.querySelectorAll(sel);
+	var cnt = item.length;
+	if(cnt==0) { 
+		alert("삭제할 요소를 선택하지 않았습니다."); 
+		return false;		
+	} else{ 
+		var qt=confirm("정말로 삭제하시겠습니까?"); 
+		if(qt) {	
+			f.submit();
+		} else {	
+			return false;
+		}
+	}
+}
+</script>
+</form>
+
+	</div>
+	
+	<footer class="ft">
+		<div class="ft_wrap">
+			<ul>
+				<li>
+					<img src="./img/bottom_visual1.png" alt="메인푸터사진1" class="vs_imgft1">
+				</li>
+				<li>
+					<img src="./img/bottom_visual2.png" alt="메인푸터사진2" class="vs_imgft2">
+				</li>
+				<li>  
+				<img src="./img/bottom_visual3.png" alt="메인푸터사진3" class="vs_imgft3">
+				 </li>   
+				 </ul>
+		</div>
+	   
+	   
+	</footer>
+</body>
+</html>

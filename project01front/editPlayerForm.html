@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원정보수정</title>
+</head>
+<body>
+	<form action="" id="" name="">
+		<ul class="u">
+			
+		<li class="1">
+		회원아이디<input type="text" value="magu0022" name="id" id="id" readonly/>
+		</li>
+		<li class="2">
+		회원비밀번호<input type="text" value="1234qw" name="pw" id="pw"/>
+		</li>
+
+
+		<li class="3">
+		회원이름<input type="text" value="마구니" name="name" id="name"/>
+		</li>
+
+		<li class="4">
+		우편번호<input type="text" value="231-22" name="zipcode" id="zipcode" />
+		</li>
+
+		<li class="5">
+		주소1<input type="text" value="서울시 구구구 동동동" name="address1" id="address1"/>
+		</li>
+
+		<li class="6">
+		주소2<input type="text" value="오피스텔" name="address2" id="address2" />
+		</li>
+
+		<li class="7">
+		연락처<input type="text" value="01033302222" name="tel" id="tel" />
+		</li>
+		<li class="8">
+		이메일<input type="text" value="magu@naver.com" name="email" id="email" />
+		</li>
+		<li class="9">
+		직업<input type="text" value="자영업" name="job" id="job" />
+		</li>
+		<li class="10">
+		소식받기
+				
+								<input type="checkbox" id="yesno" name="yesno" checked value="yes"/>
+				
+								<input type="checkbox" id="yesno" name="yesno" value="no"/>
+			
+							
+		</li>
+		<li class="11">
+		가입일<input type="text" value="2021-01-22" name="regdate" id="regdate" readonly/>
+		</li>
+		<li class="12">
+		포인트<input type="text" value="100000" name="point" id="point" readonly/>
+		</li>
+
+		</ul>
+		<!-- 정보수정 확인,취소,회원탈퇴 -->
+		<div class="btn_wrap">	
+		<button type="submit" class="in_btn" onclick="" value="확인"></button>
+		<button type="reset" class="in_btn" onclick="" value="취소" ></button>
+		<button class="in_btn"><a href="index.html">회원탈퇴</a></button>
+		</div>
+
+	</form>
+<script>
+document.getElementById("yesno").addEventListener("click", function(){
+		if(this.value=="yes") {
+			this.value = "no";
+			return false;
+		} else {
+			this.value = "yes";
+			return false;
+		}
+	});
+</script>
+</body>
+</html>

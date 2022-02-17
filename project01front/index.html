@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>이수화학</title>
+   <script src="./js/jquery.js"></script>
+   <link rel="stylesheet" href="./css/reset.css">
+   <link rel="stylesheet" href="./css/common.css">
+   <link rel="stylesheet" href="./css/footer.css">
+   <link rel="shortcut icon" href="./img/favicon.ico">
+   <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+    .vs { clear: both; width: 100%; height: 1200px; max-height: 1500px; overflow: hidden;}
+        .vs .img_box { width: 400%; height: 600%;}
+        .vs .img_box li { width: 25%; float: left; position: relative;}
+        .vs .img_box li .vs_img { display: block; width: 100%; height: 1200px;}
+        .vs .tit_box { width: 100%; height: 100%; position: absolute; top: 300px;  z-index: 20;}
+        .vs_tit { padding-left: 200px; color: #fff; font-size: 40px; padding-top: 90px; }
+        
+        .tit_boxback1:hover { background-size: cover 240px; background-image: url(./img/mainMenuVis01.jpg);  transition: 1s; }
+        .tit_boxback2:hover { background-size: cover 240px; background-image: url(./img/mainMenuVis02.jpg);  transition: 1s; }
+        .tit_boxback3:hover { background-size: cover 240px; background-image: url(./img/mainMenuVis03.jpg);  transition: 1s;}
+        .tit_boxback1:hover span { color: rgb(46, 128, 223);}
+        .tit_boxback2:hover span { color: rgb(46, 128, 223);}
+        .tit_boxback3:hover span { color: rgb(46, 128, 223);}
+        .vs_com { padding-left: 200px; color: #fff; font-size: 18px; padding-top: 40px;}
+        .more { margin-left: 250px; color: #fff; display: block; width: 120px; height: 30px; line-height: 30px; 
+        border-radius: 24px; margin-top: 20px; margin-bottom: 30px;}
+
+    </style>
+</head>
+<body>
+<!-- 헤더 -->
+<header class="hd">
+    <div class="hd_wrap">
+    <nav class="tnb">
+    <form action="" onsubmit="return sitemap(this)">
+        <a href="index.html" class="logo">
+                <img src="./img/logo.jpg" alt="로고타입" />
+            </a>
+            <ul class="right">
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="agreement.html">회원가입</a></li>
+                <li><a href="admin.html">관리페이지</a></li>	
+                <li><a href="editPlayerForm.html">회원정보수정</a></li>
+                <li><input type="submit" value="사이트맵" class="sitem"/></li>				
+            </ul>
+    </form>
+        </nav>
+         </div>
+         <div class="hd_wrap">
+        <nav class="gnb">
+            <ul>
+                <li>
+                            <a href="sub1.html" class="dp1">회사소개</a>
+                            <ul class="sub">
+                                <li><a href="sub1.html">이수화학소개</a></li>
+                                <li><a href="sub2.html">이수그룹소개</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="showBiz.html" class="dp1">사업소개</a>
+                            <ul class="sub">
+                                <li><a href="showBiz.html">화학제품</a></li>
+               
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="showNotice.html" class="dp1">공지사항</a>
+                            <ul class="sub">
+                                <li><a href="showNotice.html">공지게시판</a></li>
+                                <li><a href="howToGo.html">오시는길</a></li>
+                              
+                            </ul>
+                        </li>
+            </ul>
+        </nav>
+        </div>
+        <script>
+        function sitemap() {
+            window.open("sitemap.html", "sitewin", "width=800, height=550, top=300");
+        }
+        </script>
+    </header>
+  <div class="content">
+            <figure class="vs">
+                <ul class="img_box">
+                    <li>
+                        <img src="./img/mainVisual01.jpg" alt="메인사진1" class="vs_img">  
+                    </li>
+                    <li>
+                        <img src="./img/mainVisual02.jpg" alt="메인사진2" class="vs_img">
+                    </li>
+                    <li>
+                        <img src="./img/mainVisual03.jpg" alt="메인사진3" class="vs_img">
+                    </li> 
+                </ul>
+
+                <div class="tit_box"> 
+                    <ul class="tit_boxback">
+                        <li class="tit_boxback1" >
+                            <h2 class="vs_tit" hh><span>회사소개</span></h2>
+                            <ul >
+                            <li>
+                            <a href="sub1.html" class="more"><img src="./img/mainMenuIcon.png" alt=""></a>
+                            </li>
+                            </ul>
+                        </li>
+                        <li class="tit_boxback2">
+                         	<h2 class="vs_tit"><span>사업소개</span></h2>
+                            <ul>
+                           <li>
+                            <a href="showBiz.html" class="more"><img src="./img/mainMenuIcon.png" alt=""></a>
+                            </li>
+                            </ul>
+                        </li>
+                        <li class="tit_boxback3">
+                            <h2 class="vs_tit"><span>공지사항</span></h2>
+                            <a href="showNotice.html" class="more"><img src="./img/mainMenuIcon.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </figure>
+         <script src="./js/ban.js"></script> 
+        </div>
+	<!-- 푸터 -->
+    <footer class="ft">
+        <div class="ft_wrap">
+            <ul>
+                <li>
+                    <img src="./img/bottom_visual1.png" alt="메인푸터사진1" class="vs_imgft1">
+                </li>
+                <li>
+                    <img src="./img/bottom_visual2.png" alt="메인푸터사진2" class="vs_imgft2">
+                </li>
+                <li>  
+                <img src="./img/bottom_visual3.png" alt="메인푸터사진3" class="vs_imgft3">
+                 </li>   
+                 </ul>
+        </div>
+        <p class="copyright">
+            TEL : 02)590-6600    06575   서울특별시 서초구 사평대로 84 (반포동) <br>
+            COPYRIGHT ISU CHEMICAL. ALL RIGHTS RESERVED.
+        </p> 
+       
+    </footer>
+</body>
+</html>

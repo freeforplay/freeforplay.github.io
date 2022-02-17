@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./css/reset.css">
+   <link rel="stylesheet" href="./css/common.css">
+   <link rel="stylesheet" href="./css/footer.css">
+   <link rel="shortcut icon" href="./img/favicon.ico">
+<style>
+.lst {width: 1000px; height: 600px; background-color: rgb(250, 250, 250);margin: auto; margin-top: 100px;}
+</style>
+</head>
+<body>
+	<header class="hd">
+		<div class="hd_wrap">
+		<nav class="tnb">
+		<form action="" onsubmit="return sitemap(this)">
+			<a href="index.html" class="logo">
+					<img src="./img/logo.jpg" alt="로고타입" />
+				</a>
+				<ul class="right">
+					<li><a href="login.html">로그인</a></li>
+					<li><a href="agreement.html">회원가입</a></li>
+					<li><a href="admin.html">관리페이지</a></li>	
+					<li><a href="editPlayerForm.html">회원정보수정</a></li>
+					<li><input type="submit" value="사이트맵" class="sitem"/></li>				
+				</ul>
+		</form>
+			</nav>
+			 </div>
+			 <div class="hd_wrap">
+			<nav class="gnb">
+				<ul>
+					<li>
+								<a href="sub1.html" class="dp1">회사소개</a>
+								<ul class="sub">
+									<li><a href="sub1.html">이수화학소개</a></li>
+									<li><a href="sub2.html">이수그룹소개</a></li>
+									
+								</ul>
+							</li>
+							<li>
+								<a href="showBiz.html" class="dp1">사업소개</a>
+								<ul class="sub">
+									<li><a href="showBiz.html">화학제품</a></li>
+				   
+								</ul>
+							</li>
+							<li>
+								<a href="showNotice.html" class="dp1">공지사항</a>
+								<ul class="sub">
+									<li><a href="showNotice.html">공지게시판</a></li>
+									<li><a href="howToGo.html">오시는길</a></li>
+								  
+								</ul>
+							</li>
+				</ul>
+			</nav>
+			</div>
+			<script>
+			function sitemap() {
+				window.open("sitemap.html", "sitewin", "width=800, height=550, top=300");
+			}
+			</script>
+		</header>
+
+<h2 class="tit">글 목록</h2>
+
+	<ul class="lst">
+		<li class="item1">공지사항 번호</li>
+		<li class="item2">공지사항 제목</li>
+		<li class="item3">공지사항 등록자</li>
+		<li class="item4">공지사항 등록일</li>
+		<li class="item4">공지사항 내용</li>
+		
+
+		
+	</ul>
+
+	<footer class="ft">
+        <div class="ft_wrap">
+            <ul>
+                <li>
+                    <img src="./img/bottom_visual1.png" alt="메인푸터사진1" class="vs_imgft1">
+                </li>
+                <li>
+                    <img src="./img/bottom_visual2.png" alt="메인푸터사진2" class="vs_imgft2">
+                </li>
+                <li>  
+                <img src="./img/bottom_visual3.png" alt="메인푸터사진3" class="vs_imgft3">
+                 </li>   
+                 </ul>
+        </div>
+        <p class="copyright">
+            TEL : 02)590-6600    06575   서울특별시 서초구 사평대로 84 (반포동) <br>
+            COPYRIGHT ISU CHEMICAL. ALL RIGHTS RESERVED.
+        </p> 
+       
+    </footer>
+</body>
+</html>

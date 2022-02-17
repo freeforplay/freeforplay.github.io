@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상품 코드 중복 체크</title>
+</head>
+<body>
+	<div class="wrap">
+		<h3 class="pop_tit">사업명 중복 확인</h3>
+		<form action="codeCheckPro.jsp" method="post" onsubmit="return invalidCheck(this)">
+			<div class="item_fr">	
+				<label for="b_name" class="lb">아이디 : </label>
+				<input type="text" name="bname" id="bname" placeholder="2~12 문자 및 숫자로 입력" required autofocus />
+				<input type="submit" value="중복확인"/>
+			</div>	
+		</form>
+		<script>
+		function invalidCheck(f) {
+			var bname = f.bname.value;
+			b_name = b_name.trim();
+			if(bname.length<2 || bname.length>12) {
+				alert("아이디는 글자수가 2이상~12이하 이어야 합니다.");
+				return false;
+			}
+		}
+		</script>
+	</div>	
+</body>
+</html>

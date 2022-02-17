@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>회원 목록</title>
+<link rel="stylesheet" href="./css/reset.css">
+<script src="http://"></script>
+<style>
+body .gnb {position: absolute;}
+body .wrap {  clear:both;  height: 600px; left: 250px; position: relative; width: 1600px; margin-top: 70px; margin-bottom: 100px;}
+	.tit { text-align:center; }
+	.lst { list-style:none; clear:both; border-top:1px solid #333; width:1600px;   
+	height:36px; }
+	.lst li { float:left; width:100px; line-height:36px; text-align: center;}
+	.lst.lh { border-top:3px solid #333; background-color: white; font-size: 18px; text-align: center;}
+	.lst:last-child { border-bottom:3px solid #333; }
+	.wrap .item5 { width: 200px;}
+	.wrap .item6 { width: 200px;}
+	.wrap .item8 { width: 200px;}
+	.btn_wrap {width:240px; margin:20px auto;}
+	.btn_wrap .in_btn{display:block; width:80px; margin:15px; background-color: #333; color:#fff; text-align: center;}
+	.header_name { font-size: 40px;}
+    .gnb { clear:both; width:100%; height: 800px; background-color: lightskyblue; margin:100px auto;  }
+    .menu{clear: both; width:180px; height: 500px;}
+    .menu>li { text-align:center; font-size: 25px; padding-left:10px;padding-top: 20px; border-bottom:3px solid #333;}
+	.ft { clear: both; width:100%; }
+ .ft .vs_imgft1 { position: absolute;}
+  .ft .vs_imgft2 { position: absolute;}
+  .ft .vs_imgft3 { position: absolute;}
+	
+</style>	
+</head>
+<body>
+	<header>
+		<a href="index.html" class="logo">
+			<img src="./img/logo.jpg" alt="로고" />
+		</a>
+		<div class="header_name">
+<h3>관리자님</h3>
+		
+	</div>
+	<nav class="tnb">
+			<ul>
+				<li><a href="index.html">관리자 로그아웃</a></li>
+			</ul>
+		</nav>
+		<nav class="gnb">
+			<ul class="menu">
+				<li class="item1"><a href="getMemberList.html">회원 관리</a></li>
+				<li class="item3"><a href="getBizList.html">사업목록</a></li>
+				<li class="item4"><a href="insertBiz.html">사업등록</a></li>
+				<li class="item5"><a href="getNoticeList.html">공지사항 관리</a></li>
+				<!-- <li class="item2"><a href="">제품관리</a></li> -->
+			
+			</ul>
+		</nav>
+	
+	</header>
+<div class="wrap">
+<h2 class="tit">회원 목록</h2>
+<ul class="lst lh">
+	<li class="item1">아이디 </li>
+	<li class="item2">비밀번호</li>
+	<li class="item3">이름</li>
+	<li class="item4">우편번호</li>
+	<li class="item5">주소1</li>
+	<li class="item6">주소2</li>
+	<li class="item7">연락처</li>
+	<li class="item8">이메일</li>
+	<li class="item9">직업</li>
+	<li class="item10">소식알림</li>
+	<li class="item11">가입일</li>
+	<li class="item12">포인트</li>
+	<li class="item13">편집</li>
+</ul>
+<form action="" id="" name="">
+
+	<ul class="lst">
+		<li class="item1"><a href="editMemberForm.html">choi001</a></li>
+		<li class="item2">33432</li>
+		<li class="item3">최아무개</li>
+		<li class="item4">334-1</li>
+		<li class="item5">경기도 고양시 일산동구</li>
+		<li class="item6">라페스타</li>
+		<li class="item7">01033442222</li>
+		<li class="item8">successinrea@naver.com</li>
+		<li class="item9">피부관리사</li>
+		<li class="item10">yes</li>
+		<li class="item11">20220102</li>
+		<li class="item12">100000</li>
+		<li class="item13">
+		<input type="checkbox" name="ck" id="ck<%=i %>" class="ck_item" value="choi001"/>
+		</li>
+	</ul>
+	<ul class="lst">
+		<li class="item1"><a href="editMemberForm.html">choi001</a></li>
+		<li class="item2">33432</li>
+		<li class="item3">최아무개</li>
+		<li class="item4">334-1</li>
+		<li class="item5">경기도 고양시 일산동구</li>
+		<li class="item6">라페스타</li>
+		<li class="item7">01033442222</li>
+		<li class="item8">successinrea@naver.com</li>
+		<li class="item9">피부관리사</li>
+		<li class="item10">yes</li>
+		<li class="item11">20220102</li>
+		<li class="item12">100000</li>
+		<li class="item13">
+		<input type="checkbox" name="ck" id="ck<%=i %>" class="ck_item" value="choi001"/>
+		</li>
+	</ul>
+	<ul class="lst">
+		<li class="item1"><a href="editMemberForm.html">choi001</a></li>
+		<li class="item2">33432</li>
+		<li class="item3">최아무개</li>
+		<li class="item4">334-1</li>
+		<li class="item5">경기도 고양시 일산동구</li>
+		<li class="item6">라페스타</li>
+		<li class="item7">01033442222</li>
+		<li class="item8">successinrea@naver.com</li>
+		<li class="item9">피부관리사</li>
+		<li class="item10">yes</li>
+		<li class="item11">20220102</li>
+		<li class="item12">100000</li>
+		<li class="item13">
+		<input type="checkbox" name="ck" id="ck<%=i %>" class="ck_item" value="choi001"/>
+		</li>
+	</ul>
+	<ul class="lst">
+		<li class="item1"><a href="editMemberForm.html">choi001</a></li>
+		<li class="item2">33432</li>
+		<li class="item3">최아무개</li>
+		<li class="item4">334-1</li>
+		<li class="item5">경기도 고양시 일산동구</li>
+		<li class="item6">라페스타</li>
+		<li class="item7">01033442222</li>
+		<li class="item8">successinrea@naver.com</li>
+		<li class="item9">피부관리사</li>
+		<li class="item10">yes</li>
+		<li class="item11">20220102</li>
+		<li class="item12">100000</li>
+		<li class="item13">
+		<input type="checkbox" name="ck" id="ck<%=i %>" class="ck_item" value="choi001"/>
+		</li>
+	</ul>
+	<ul class="lst">
+		<li class="item1"><a href="editMemberForm.html">choi001</a></li>
+		<li class="item2">33432</li>
+		<li class="item3">최아무개</li>
+		<li class="item4">334-1</li>
+		<li class="item5">경기도 고양시 일산동구</li>
+		<li class="item6">라페스타</li>
+		<li class="item7">01033442222</li>
+		<li class="item8">successinrea@naver.com</li>
+		<li class="item9">피부관리사</li>
+		<li class="item10">yes</li>
+		<li class="item11">20220102</li>
+		<li class="item12">100000</li>
+		<li class="item13">
+		<input type="checkbox" name="ck" id="ck<%=i %>" class="ck_item" value="choi001"/>
+		</li>
+	</ul>
+	<ul class="lst">
+		<li class="item1"><a href="editMemberForm.html">choi001</a></li>
+		<li class="item2">33432</li>
+		<li class="item3">최아무개</li>
+		<li class="item4">334-1</li>
+		<li class="item5">경기도 고양시 일산동구</li>
+		<li class="item6">라페스타</li>
+		<li class="item7">01033442222</li>
+		<li class="item8">successinrea@naver.com</li>
+		<li class="item9">피부관리사</li>
+		<li class="item10">yes</li>
+		<li class="item11">20220102</li>
+		<li class="item12">100000</li>
+		<li class="item13">
+		<input type="checkbox" name="ck" id="ck<%=i %>" class="ck_item" value="choi001"/>
+		</li>
+	</ul>
+<div class="btn_wrap">
+<ul>
+<li>	
+<button type="" class="in_btn" onclick="" >삭제</button>
+<button type="" class="in_btn" onclick="">취소</button>
+</li>
+</ul>
+</form>
+
+<script>
+function frm_submit(f) {	
+	var sel = 'input[name="ck"]:checked'; 
+	var item = document.querySelectorAll(sel); 
+	var cnt = item.length;
+	if(cnt==0) { 
+		alert("삭제할 요소를 선택하지 않았습니다."); 
+		return false;		
+	} else{
+		var qt=confirm("정말로 삭제하시겠습니까?"); 
+		if(qt) {	
+			f.submit();
+		} else {	
+			return false;
+		}
+	}
+}
+</script>
+</div>
+
+</div>
+</style>
+<footer class="ft">
+			   <div class="ft_wrap">
+				   <ul>
+					   <li>
+						   <img src="./img/bottom_visual1.png" alt="메인푸터사진1" class="vs_imgft1">
+					   </li>
+					   <li>
+						   <img src="./img/bottom_visual2.png" alt="메인푸터사진2" class="vs_imgft2">
+					   </li>
+					   <li>  
+					   <img src="./img/bottom_visual3.png" alt="메인푸터사진3" class="vs_imgft3">
+						</li>   
+						</ul>
+			   </div>
+			  
+			  
+		   </footer>
+</body>
+</html>

@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>관리자 - 상품등록</title>
+<link rel="stylesheet" href="./css/reset.css">
+<style>
+	body .gnb {position: absolute;}
+	body .wrap {  clear:both;  height: 500px; left: 350px; position: relative; width: 500px; margin-top: 100px;}
+
+	.header_name { font-size: 40px;}
+    .gnb { clear:both; width:100%; height: 800px; background-color: lightskyblue; margin:100px auto;  }
+    .menu{clear: both; width:180px; height: 500px;}
+    .menu>li { text-align:center; font-size: 25px; padding-left:10px;padding-top: 20px; border-bottom:3px solid #333;}
+
+	.ft { clear: both; width:100%; }
+ 	.ft .vs_imgft1 { position: absolute;}
+  	.ft .vs_imgft2 { position: absolute;}
+  	.ft .vs_imgft3 { position: absolute;}
+
+</style>
+</head>
+<body>
+	<!-- 헤더 -->
+	<header>
+		<a href="index.html" class="logo">
+			<img src="./img/logo.jpg" alt="로고" />
+		</a>
+		<div class="header_name">
+	<h3>관리자님</h3>
+		
+	</div>
+	<nav class="tnb">
+			<ul>
+				<li><a href="logout.jsp">관리자 로그아웃</a></li>
+			</ul>
+		</nav>
+		<nav class="gnb">
+			<ul class="menu">
+				<li class="item1"><a href="getMemberList.html">회원 관리</a></li>
+					<li class="item3"><a href="getBizList.html">사업목록</a></li>
+					<li class="item4"><a href="insertBiz.html">사업등록</a></li>
+					<li class="item5"><a href="getNoticeList.html">공지사항 관리</a></li>
+				<!-- <li class="item2"><a href="">제품관리</a></li> -->
+			
+			</ul>
+		</nav>
+	
+	</header>
+	<div class="wrap">
+	<h1>상품 등록</h1>
+	<!-- 상품 등록 폼 -->
+	<form action="" class="frm" method="post" name="pform" onsubmit="return pCheck(this)">
+		<table>
+			<tr>
+				<th class="item_name">
+					<label for="b_name">사업명</label>
+				</th>
+				<td class="item_val">
+					<input type="text" name="b_name" id="b_name" class="in_data" placeholder="사업명입력" required />
+					<input type="button" value="사업명 중복체크" class="in_btn" onclick="codeCheck()" />
+					<input type="hidden" value="" name="codeck" id="codeck" />
+				</td>
+			</tr>
+			<tr>
+				<th class="item_name">
+					<label for="b_sp">특징</label>
+				</th>
+				<td class="item_val">
+					<input type="text" name="b_sp" id="b_sp" class="in_data" placeholder="특징 입력" required />
+				</td>
+			</tr>
+			<tr>
+				<th class="item_name">
+					<label for="b_cs">주요고객</label>
+				</th>
+				<td class="item_val">
+					<input type="text" name="b_cs" id="b_cs" class="in_data"  />
+				</td>
+			</tr>
+			<tr>
+				<th class="item_name">
+					<label for="b_ad">공장위치</label>
+				</th>
+				<td class="item_val">
+					<input type="text" name="b_ad" id="b_ad" class="in_data" required />
+				</td>
+			</tr>
+			<tr>
+				<th class="item_name">
+					<label for="b_use">용도</label>
+				</th>
+				<td class="item_val">
+					<input type="text" name="b_use" id="b_use" class="in_data" required />
+				</td>
+			</tr>
+			<tr>
+				<th class="item_name">
+					<label for="b_vc">Value Chain</label>
+				</th>
+				<td class="item_val">
+					<input type="text" name="b_vc" id="b_vc" class="in_data"/>
+					<input type="button" value="이미지 업로드 체크" class="in_btn" onclick="vcCheck()" />
+					<input type="hidden" value="" name="vcck" id="vcck" />
+				</td>
+			</tr>
+			<tr>
+				<th class="item_name">
+					<label for="b_phy">물성표</label>
+				</th>
+				<td class="item_val">
+					<input type="text" name="b_phy" id="b_phy" class="in_data"/>
+					<input type="button" value="이미지 업로드 체크" class="in_btn" onclick="phyCheck()" />
+					<input type="hidden" value="" name="phyck" id="phyck" />
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="제품등록" class="in_btn"/></td>
+				<td><input type="reset" value="취소" class="in_btn"/></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	<script>
+	function codeCheck() {
+		window.open("codeCheckForm.jsp", "pcodecheck", "width=300, height=300");
+	}
+	function vcCheck() {
+		window.open("vcCheckForm.jsp", "imguploadcheck", "width=300, height=300");
+	}
+	function phyCheck() {
+		window.open("phyCheckForm.jsp", "imguploadcheck", "width=300, height=300");
+	}
+	function pCheck(f) {
+		if(f.codeck.value!="yes" || f.vcck.value!="yes" || f.phyck.value!="yes"){
+			alert("상품코드 및 이미지 체크가 되어 있지 않습니다.");
+			return false;
+		}
+	}
+	</script>	
+	<!-- 푸터 -->
+	<footer class="ft">
+		<div class="ft_wrap">
+			<ul>
+				<li>
+					<img src="./img/bottom_visual1.png" alt="메인푸터사진1" class="vs_imgft1">
+				</li>
+				<li>
+					<img src="./img/bottom_visual2.png" alt="메인푸터사진2" class="vs_imgft2">
+				</li>
+				<li>  
+				<img src="./img/bottom_visual3.png" alt="메인푸터사진3" class="vs_imgft3">
+				 </li>   
+				 </ul>
+		</div>
+	   
+	   
+	</footer>
+</body>
+</html>

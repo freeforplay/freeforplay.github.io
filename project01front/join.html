@@ -1,0 +1,268 @@
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/footer.css">
+<style>
+input { outline:0; border:0;  border-radius:0;  }
+.fr { clear:both; width:960px; margin:10px auto; margin-bottom:80px;    }
+.fr:after { content:""; display:block; clear:both; }
+.fr_com { text-align:center; line-height:2.4; color:deeppink; font-weight:bold; }
+.fr_tit { text-align:center; line-height:3; padding-top:1em; text-align:center; }
+.fr_list li { clear:both;  }
+.fr_list li:first-child { border-radius:30px 30px 0px 0px; }
+.fr_list li:after { content:""; clear:both; display:block; }
+.fr_list li:nth-child(2n+1) { background-color:rgb(83, 161, 252); }
+.fr_list li:nth-child(2n) { background-color:#99f593; }
+.lb { display:block;  width:200px; height:42px; line-height:42px; float:left; padding-top:20px; padding-bottom:20px;
+padding-left:20px; color:rgb(34, 34, 34); font-weight:bold;  }
+.lb.rep:before { content:"* "; color:deeppink; font-size:18px; }
+.lb_data { display:block;  height:42px; line-height:42px; float:left; padding-top:20px; padding-bottom:20px; }
+.in_data { display:block; float:left; border:1px solid #333; width:400px; height:40px; line-height:40px; padding-left:20px; }
+.in_btn { display:block; height:40px; line-height:40px; width:130px; float:left; border-radius:22px; background:#333; color:#fff; margin-left:20px; 
+cursor:pointer; }
+.in_btn:hover { background-color:deepskyblue; }
+.fr_col { width:50%; float:left; padding-top:20px; padding-bottom:20px; display:block; }
+.fr_col .in_btn { clear:both;  }
+.fr_col.first .in_btn { float:right; margin-right:25px; }
+.fr_col.last .in_btn { float:left; margin-left:25px; }
+</style>
+</head>
+<body>
+
+	
+
+	<header class="hd">
+	<div class="hd_wrap">
+	<nav class="tnb">
+	<form action="" onsubmit="return sitemap(this)">
+		<a href="index.html" class="logo">
+				<img src="./img/logo.jpg" alt="로고타입" />
+			</a>
+			<ul class="right">
+				<li><a href="login.html">로그인</a></li>
+				<li><a href="agreement.html">회원가입</a></li>
+				<li><a href="admin.html">관리페이지</a></li>	
+				<li><a href="EditPlayerFormCtrl?id=<%=uid %>">회원정보수정</a></li>
+				<li><input type="submit" value="사이트맵" class="sitem"/></li>				
+			</ul>
+	</form>
+		</nav>
+		 </div>
+		 <div class="hd_wrap">
+		<nav class="gnb">
+			<ul>
+				<li>
+							<a href="sub1.html" class="dp1">회사소개</a>
+							<ul class="sub">
+								<li><a href="sub1.html">이수화학소개</a></li>
+								<li><a href="sub2.html">이수그룹소개</a></li>
+								
+							</ul>
+						</li>
+						<li>
+							<a href="showBiz.html" class="dp1">사업소개</a>
+							<ul class="sub">
+								<li><a href="showBiz.html">화학제품</a></li>
+			   
+							</ul>
+						</li>
+						<li>
+							<a href="showNotice.html" class="dp1">공지사항</a>
+							<ul class="sub">
+								<li><a href="showNotice.html">공지게시판</a></li>
+								<li><a href="howToGo.html">오시는길</a></li>
+							  
+							</ul>
+						</li>
+			</ul>
+		</nav>
+		</div>
+		<script>
+		function sitemap() {
+			window.open("sitemap.jsp", "sitewin", "width=800, height=550, top=300");
+		}
+		</script>
+	</header>
+	<!-- 회원가입 폼 -->
+<div class="fr">	
+	<form action="JoinCtrl" class="frm" method="post" name="joinform" onsubmit="return joinCheck(this)">
+	<h2 class="fr_tit">회원 가입</h2>
+	<p class="fr_com">* 항목은 필수 입력</p>
+	<ul class="fr_list">
+		<li>
+			<label for="m_id" class="lb rep">아이디</label>
+			<span class="lb_data">
+				<input type="text" name="m_id" id="m_id" placeholder="6~12 문자 및 숫자로 입력" maxlength="12" class="in_data" required autofocus />
+				<input type="button" value="ID중복 확인" onclick="idCheck()" class="in_btn"/>
+				<input type="hidden" value="" name="idck" id="idck" />
+			</span>
+		</li>
+		<li>
+			<label for="m_pw" class="lb  rep">비밀번호</label>
+			<span class="lb_data">
+				<input type="password" name="m_pw" id="m_pw" placeholder=""  class="in_data" required />
+			</span>
+		</li>
+		<li>
+			<label for="m_pw2" class="lb rep">비밀번호 확인</label>
+			<span class="lb_data">
+				<input type="password" name="m_pw2" id="m_pw2" placeholder="" class="in_data" required />
+			</span>
+		</li>
+		<li>
+			<label for="name" class="lb rep">이름</label>
+			<span class="lb_data">
+				<input type="text" name="name" id="name" placeholder="이름 입력" class="in_data" required />
+			</span>
+		</li>
+		<li>
+			<label for="email" class="lb rep">이메일</label>
+			<span class="lb_data">
+				<input type="text" name="email" id="email" placeholder="" class="in_data" required />
+				<!--  <input type="button" value="이메일중복확인" onclick="emailCheck()" class="in_btn"/> -->
+			</span>
+		</li>
+		<li>
+			<label for="tel" class="lb rep">전화번호</label>
+			<span class="lb_data">
+				<input type="text" name="tel" id="tel" placeholder="-를 제외하여 입력" class="in_data" required />
+			</span>
+		</li>
+		<li><label for="zipcode" class="lb">우편번호</label>
+			  <span class="lb_data">
+			  		<input type="text" name="zipcode" id="zipcode" class="in_data" />
+			  		<input type="button" value="주소찾기" onclick="findAddr()" class="in_btn"/>	
+			  </span>
+		</li>
+		<li>
+		    <label for="address1" class="lb">주소</label>
+			<span class="lb_data">
+				<input type="text" name="address1" id="address1" class="in_data" />
+			</span>
+		</li>
+		<li>
+			<label for="address2" class="lb">상세주소</label>
+			<span class="lb_data">
+				<input type="text" name="address2" id="address2" class="in_data" />
+			</span>
+		</li>
+		<li>
+			<label for="job" class="lb">직업</label>
+			<span class="lb_data">
+				<select name="job" id="job" class="in_data" >
+					<option value="N/A">선택하세요</option>
+					<option value="회사원">회사원</option>
+					<option value="전산직" >공무원</option>
+					<option value="학생">학생</option>
+					<option value="공무원">운동선수</option>
+					<option value="주부">건설업</option>
+					<option value="기타">기타</option>
+				</select>
+			</span>
+		</li>
+		<li>
+			<label for="yesno" class="lb">소식알림동의</label>
+			<input type="checkbox" name="" id="yn" class="in_data" value="no" />
+			<input type="hidden" name="yesno" id="yesno" value="no"/>
+			<h4>이메일 & 문자로 알림을 받습니다.</h4>
+		
+		</li>
+		<li>
+			<span class="fr_col first">
+				<input type="submit" value="회원가입"  class="in_btn"/>
+			</span>
+			<span class="fr_col last">
+				<input type="reset" value="취소" class="in_btn"/>
+			</span>
+		</li>
+	</ul>
+	</form>
+</div>
+	<!-- 회원가입시 바뀐 형식의 주소 및 우편번호 취급 처리 스크립트 -->
+    <script>
+      
+        function findAddr(){
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    console.log(data);                   
+                    var roadAddr = data.roadAddress; 
+                    var jibunAddr = data.jibunAddress; 
+                   
+                    document.getElementById('zipcode').value = data.zonecode;
+                    if(roadAddr !== ''){
+                        document.getElementById("address1").value = roadAddr;
+                    } 
+                    else if(jibunAddr !== ''){
+                        document.getElementById("address1").value = jibunAddr;
+                    }
+                }
+            }).open();
+        }
+    </script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    
+	<!-- 아이디 중복 체크 및 유효성 검증 체크 스크립트 -->
+	<script>
+	
+	function idCheck() {
+		window.open("idCheckForm.jsp", "idwin", "width=400, height=350");
+	}
+
+	function joinCheck(f){
+		if(f.idck.value!="yes"){
+			alert("아이디 중복 검사를 진행하지 않으셨습니다.");
+			return false;
+		}
+		if(f.m_pw.value!=f.m_pw2.value) {
+			alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
+			return false;
+		}
+	}
+                
+    
+document.getElementById("yn").addEventListener("click", function(){
+		if(this.value=="no") {
+			this.value = "yes";
+			document.getElementById("yesno").value="yes";
+			return false;
+		} else {
+			this.value = "no";
+			document.getElementById("yesno").value="no";
+			return false;
+		}
+	});
+
+	</script>
+<footer class="ft">
+		   <div class="ft_wrap">
+			   <ul>
+				   <li>
+					   <img src="./img/bottom_visual1.png" alt="메인푸터사진1" class="vs_imgft1">
+				   </li>
+				   <li>
+					   <img src="./img/bottom_visual2.png" alt="메인푸터사진2" class="vs_imgft2">
+				   </li>
+				   <li>  
+				   <img src="./img/bottom_visual3.png" alt="메인푸터사진3" class="vs_imgft3">
+					</li>   
+					</ul>
+		   </div>
+		   <p class="copyright">
+			   TEL : 02)590-6600    06575   서울특별시 서초구 사평대로 84 (반포동) <br>
+			   COPYRIGHT ISU CHEMICAL. ALL RIGHTS RESERVED.
+		   </p> 
+		  
+	   </footer>
+</body>
+</html>
